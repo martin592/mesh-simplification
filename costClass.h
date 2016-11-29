@@ -4,6 +4,7 @@
 #include <vector>
 #include <cassert>
 #include "point.hpp"
+#include "meshInfo.hpp"
 
 /// include for the optimal point computation
 
@@ -27,30 +28,70 @@ using vec = vector<Real>;
     The implementation for the complete cost functional has to be done.
 */
 
-class costClass
+template<Meshtype MT = MeshType::GEO>
+class costClass<MT>
 {
 
-    public:
+    protected:
 
 		  /*! Vector of the geometric matrices Q for each node */
 		  vector<vec>           Qvec;
 
           /*! Connections */
-		  connect<Triangle,MT>   connectivity;
+		  meshInfo<Triangle,MT>   gridInfo;
 
       //
       // Constructors
       //
 
       public:
+
           /*! Constructor */
-          costClass(connect<Triangle,MT>   _conn);
+          costClass(meshInfo<Triangle,MT>   _gridInfo);
 
           /*! Copy constructor */
           costClass(costClass & cC);
 
           /*! Destructor */
           ~costClass();
+
+      //
+      // Methods get/set/update
+      //
+          /*! Method which returns the vector of Q matrices */
+		  vector<vec> getQVec() const;
+
+          /*! Method which provides the vector of Q matrices to the class
+                \param  _Qvec, input vector of Qs  */
+		  void setQVec(vector<vec> & _Qvec);
+
+          /*! Update of the entire costClass object
+                \param  _conn, connect object
+                \param  nodeIds, list of nodes to update */
+		  void costClass<Meshtype>::updateCostObject(const connect<MeshType> _conn, const vector<UInt> nodeIds)
+
+
+          /*! Method which adds a Q matrix to the vector QVec
+                \param  _Q, matrix to add to the list Qvec */
+		  void addQ(vec & _Q);
+
+          /*! Method which take the Q matrix corresponding to nodeId i
+                \param  id, node id  */
+		  void getQ(UInt id);
+
+      //
+      // Methods for the update
+      //
+
+          /*! Update of the Q matrix of nodeInvolved and node nodeCollapse
+                \param  nodeIds, list of nodes to update
+              Pay attention: this method requires that the connectivity node2elem is updated in gridInfo.*/
+          void updateQVector(const vector<UInt> nodeIds);
+
+          /*! Update of the entire costClass object, including the connectivity of gridInfo
+                \param  _conn, connect object
+                \param  nodeIds, list of nodes to update */
+		  void updateCostObject(const connect<MeshType> _conn, const vector<UInt> nodeIds)
 
       //
       // Methods for the building of the geometric matrices associated to nodes and edges of the mesh
@@ -74,33 +115,14 @@ class costClass
 		  /*! Method which sets the vector of Q matrices of the nodes */
 		  void setupQVector();
 
-          /*! Update of the Q matrix of nodeInvolved and node nodeCollapse
-                \param  nodeIds, list of nodes  */
-          void updateQVector(const vector<UInt> nodeIds);
-
       //
-      // Methods for finding matrices and point for the collapse and cost computing
+      // Method for cost computing
       //
-
-      public:
-          /*! Method that returns the optimal point from Qtilde
-                \param edge */
-          point createOptimalPoint(const vector<UInt> & edge) const;
-
-		  /*! Method which creates the list of nodes to test
-              The method considers inversion problems, the optimal point exceptions and the border end points
-                \param edge
-                \param newNodes list of test points */
-		  void createPointList(const vector<UInt> & edge, const vector<point> & newNodes) const;
 
 		  /*! Method which returns the collapse cost of an edge
                 \param QEdge geometrical matrix for the edge
                 \param pNew collapse point */
-		  Real getEdgeCost(const vec & QEdge, const point pNew) const;
-
-		  /*! Method which return the collapse point with minimum cost and the cost itself
-                \param edge */
- 		  pair<point, Real> getEdgeCost(const vector<UInt> & edge) const;
+		  Real getCost(const vec & QEdge, const point pNew) const;
 
 }
 

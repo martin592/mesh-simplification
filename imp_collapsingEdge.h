@@ -11,16 +11,13 @@ namespace geometry
 
         // Default Constructor
         collapsingEdge::collapsingEdge() :
-            a(pNull), b(pNull), collapsePoint(pNull), cost(-1) {}
+            a(-1), b(-1), collapsePoint(pNull), cost(-1) {}
 
         // Constructor
         collapsingEdge::collapsingEdge(const vector<UInt> & edge, costClass costObj)
         {
-            UInt id_a = min(edge.at(0), edge.at(1));
-            UInt id_b = max(edge.at(0), edge.at(1));
-
-            a = grid->getNode(id_a);
-            b = grid->getNode(id_b);
+            a = min(edge.at(0), edge.at(1));
+            b = max(edge.at(0), edge.at(1));
 
             pair<point,Real> optimumPair;
 
@@ -29,6 +26,15 @@ namespace geometry
 
             collapsePoint = optimumPair.first;
             cost = optimumPair.second;
+        }
+
+        collapsingEdge::collapsingEdge(const UInt a_, const UInt b_, const point collPt, const Real c)
+        {
+            a = a_;
+            b = b_;
+
+            collapsePoint = collPt;
+            cost = c;
         }
 
 
@@ -45,14 +51,15 @@ namespace geometry
 
         }
 
+
         bool operator==(const collapsingEdge &cE)
         {
-            return (a.getId()==cE.getA() && b.getId()==cE.getB());
+            return (a==cE.getA() && b==cE.getB());
         }
 
         bool operator==(const vector<Uint> &edge)
         {
-            return (a.getId()==edge.at(0) && b.getId()==edge.at(1));
+            return (a==edge.at(0) && b==edge.at(1));
         }
 
         bool operator!=(const collapsingEdge &cE)
@@ -70,14 +77,14 @@ namespace geometry
             if (cost!=cE.cost)
                 return (cost < cE.getCost());
             else
-                return (a.getId() < cE.getA().getId() );
+                return (a < cE.getA() );
         }
 
 		private:
 
         void collapsingEdge::print()
         {
-            cout<<"Edge with end points: "<< a.getId() <<"-"<< b.getId() <<" and cost "<< cost <<endl;
+            cout<<"Edge with end points: "<< a <<"-"<< b <<" and cost "<< cost <<endl;
         }
 
 }

@@ -16,7 +16,7 @@ using namespace std;
 /*! Edge class thought specifically for an iterative simplification process which collapses the edge with minimum cost.
     It contains the following:
         <ol>
-        <li> end points;
+        <li> ids of the end points;
         <li> optimal point for the collapse;
         <li> cost value.
         </ol>
@@ -28,9 +28,9 @@ class collapsingEdge
 
     private:
 
-    // Two ending points of the edge
-    point a;
-    point b;
+    // Ids of the two ending points of the edge
+    UInt a;
+    Uint b;
 
     // Point for the collapse
     point collapsePoint;
@@ -48,8 +48,12 @@ class collapsingEdge
         collapsingEdge();
 
         /*! Constructor from simple edge
-                \param edge	pointer to the edge */
-        collapsingEdge(const vector<point> & edge, costClass costClassObject);
+                \param edge, without cost information
+                \param costObj costClass obkject */
+        collapsingEdge(const vector<UInt> & edge, costClass costObj);
+
+
+        collapsingEdge(const UInt a_, const UInt b_, const point collPt, const Real c);
 
         /*! Copy constructor
             \param collapsing edge to copy  */
@@ -86,10 +90,10 @@ class collapsingEdge
     //
 
     public:
-        /*! Get the first end point */
+        /*! Get the id of the first end point */
         point getA() const;
 
-        /*! Get the second end point */
+        /*! Get the id of the second end point */
         point getB() const;
 
         /*! Get the collapse point */
@@ -103,10 +107,10 @@ class collapsingEdge
     //
 
     public:
-        /*! Set the first end point*/
+        /*! Set the id of first end point*/
         void setA(const point a_);
 
-        /*! Set the second end point*/
+        /*! Set the id of second end point*/
         void setB(const point b_);
 
         /*! Set the optimal point*/

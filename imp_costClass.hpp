@@ -30,29 +30,66 @@ vec operator*(const vec & v1, const vec & v2)
 // Constructor
 //
 
-costClass::costClass(connect<Triangle,MT>  _conn)
+costClass<Meshtype>::costClass(meshInfo<Triangle,MT>   _gridInfo)
 {
-    connectivity = _conn;
+    gridInfo= _gridInfo;
 
     setupQVector();
 }
 
 
-costClass::costClass(costClass & cC){
+costClass<Meshtype>::costClass(costClass & cC){
     Qvec = cC.QVec;
-    connectivity = cC.connectivity;
+    gridInfo = cC.gridInfo;
 }
 
 ~costClass(){
     Qvec.clear();
-    connectivity.clear();
+    gridInfo.connectivity.clear();
 }
+
+
+vector<vec> costClass<Meshtype>::getQVec()
+{
+        return(Qvec);
+}
+
+void costClass<Meshtype>::setQVec(vector<vec> & _Qvec)
+{
+    Qvec = _Qvec;
+}
+
+void costClass<Meshtype>::updateQVector(const vector<UInt> nodeIds)
+{
+    for (UInt i=0; i<nodeIds.size(); i++)
+            Qvec.at(nodeIds[i]) = createQ(nodeIds[i]);
+}
+
+void costClass<Meshtype>::updateCostObject(const connect<MeshType> _conn, const vector<UInt> nodeIds)
+{
+
+    gridInfo.connectivity = _conn;
+
+    updateQVector( nodeIds);
+}
+
+
+void costClass<Meshtype>::addQ(vec & _Q)
+{
+    Qvec.push_back(_Q);
+}
+
+void costClass<Meshtype>::getQ(UInt id)
+{
+    return (Qvec.at(id))
+}
+
 
 //
 // Preparatory methods for the geometric matrices
 //
 
-vec costClass::createK_p(const UInt nodeId, const UInt elemId)
+vec costClass<Meshtype>::createK_p(const UInt nodeId, const UInt elemId)
     {
 
     assert(nodeId<grid->getNumNodes());
@@ -60,11 +97,11 @@ vec costClass::createK_p(const UInt nodeId, const UInt elemId)
 
     // variables
     Real    noteTerm;
-    point   normal;
+    point3D   normal;
     vec     K_p;
 
     //	take the normal
-    normal = getNormal(elemId);
+    normal = gridInfogetNormal(elemId);
 
     // set the noteTerm
     noteTerm = (-1.0)*(grid->getNode(nodeId)*normal);
@@ -83,7 +120,7 @@ vec costClass::createK_p(const UInt nodeId, const UInt elemId)
 }
 
 
-vec costClass::createQ(const UInt nodeId){
+vec costClass<Meshtype>::createQ(const UInt nodeId){
 
         assert(nodeId< grid->getNumNodes());
 
@@ -94,10 +131,10 @@ vec costClass::createQ(const UInt nodeId){
         QTmp.assign(16,0.0);
 
         // take the connected nodes to nodeId
-        for(UInt i=0; i<connectivity.Node2Elem[nodeId].size()); ++i)
+        for(UInt i=0; i<gridInfo.connectivity.getNode2Elem(nodeId).size()); ++i)
         {
             // compute the K_p matrix
-            K_p = createK_p(nodeId, connectivity.node2elem[nodeId].getConnected().at(i));
+            K_p = createK_p(nodeId, gridInfo.connectivity.getNode2Elem(nodeId).getConnected().at(i));
 
             // update the matrix Q
             QTmp = QTmp + K_p;
@@ -110,190 +147,36 @@ vec costClass::createQ(const UInt nodeId){
 }
 
 
-vec costClass::createQ(const vector<UInt> & edge)
+vec costClass<Meshtype>::createQ(const vector<UInt> & edge)
     {
         // initialize the 4x4 matrix to 0
         vec QEdge;
         QEdge.assign(16,0.0);
 
         // sum of the Q matrices of the end points
-        QEdge = Qvec[edge.at(0)]+Qvec[edge.at(1)];
+        QEdge = Qvec[edge.at(0)] + Qvec[edge.at(1)];
 
         return(QEdge)
 }
 
 
-void costClass::setupQVector()
+void costClass<Meshtype>::setupQVector()
     {
-    Qvec.clear();
-    Qvec.resize(grid->getNumNodes());
+        Qvec.clear();
+        Qvec.resize(grid->getNumNodes());
 
-    // loop on the nodes of the mesh to create all the matrices
-    for(UInt i=0; i<grid->getNumNodes(); ++i)
-        Qvec[i] = createQ(i);
+        // loop on the nodes of the mesh to create all the matrices
+        for(UInt i=0; i<grid->getNumNodes(); ++i)
+            Qvec[i] = createQ(i);
+
 }
 
 
-void costClass::updateQVector(const vector<UInt> nodeIds)
-{
-    for (UInt i=0; i<nodeIds.size(); i++)
-            Qvec[nodeIds[i]] = createQ(nodeIds[i]);
-}
+Real costClass<Meshtype>::getCost(const vec & QEdge, const point pNew){
 
-//
-// Cost computing
-//
-
-point costClass::createOptimalPoint(const vector<UInt> & edge)
-{
       // variables
-      UInt           cont=0;
-      point			 pNew;
-      vec	         QTmp;
-
-      Epetra_SerialDenseMatrix  QTilde;
-      Epetra_SerialDenseVector	   v,b;
-      Epetra_SerialDenseSolver	solver;
-
-      // construct the edge matrix Qtmp
-      QTmp = createQTilde(edge);
-
-      // remove the elements I do not care for the solver
-      QTmp[12] = 0.0;
-      QTmp[13] = 0.0;
-      QTmp[14] = 0.0;
-      QTmp[15] = 1.0;
-
-      // create Qtilde
-      QTilde.Shape(4,4);
-      for(UInt i=0; i<4; ++i)
-            for(UInt j=0; j<4; ++j, ++cont)
-                QTilde(i,j) = QTmp[cont];
-
-      v.Size(4);
-      b.Size(4);
-
-      // set the note term b
-      b(0) = 0.0;
-      b(1) = 0.0;
-      b(2) = 0.0;
-      b(3) = 1.0;
-
-      // set the variables of the solver
-      solver.SetMatrix(QTilde);
-      solver.SetVectors(v,b);
-
-      double res = solver.Solve();
-
-      // no solution so I return pNull
-      if(res==-1.0)
-                return(pNull);
-
-      // otherwise v contains the coordinates of the optimal point
-      pNew.setX(v(0));
-      pNew.setY(v(1));
-      pNew.setZ(v(2));
-
-      return(pNew);
-}
-
-
-void costClass::createPointList(const vector<UInt> & edge,const vector<point> & newNodes)
-{
-   // variables
-    point     	pMid, pOpt;
-    point p1    =	grid->getNode(edge.at(0));
-    point p2 	=	grid->getNode(edge.at(1));
-    UInt bound1 = grid->getNode(edge.at(0)).getBoundary();
-    UInt bound2 = grid->getNode(edge.at(1)).getBoundary();
-    vector<UInt>	geoIds1, geoIds2;
-    vector<point>	newNodeTmp;
-
-    // reserve on the nodes-to-test list
-    newNodeTmp.clear();
-    newNodeTmp.reserve(5);
-
-    // switch on different border conditions
-    switch(bound1)
-    {
-      case(0):
-	      switch(bound2)
-	      {
-		// both intern points
-		case(0):
-
-			// compute the optimal point
-			pOpt = createPointFromMatrix(edge);
-			pOpt.setBoundary(0);
-
-			if(pOpt!=pNull)
-                newNodeTmp.push_back(pOpt);
-
-			// compute the middle point
-			pMid.replace(p1,p2,0.5);
-			pMid.setBoundary(0);
-
-			newNodeTmp.push_back(pMid);
-
-			newNodeTmp.push_back(p1);
-			newNodeTmp.push_back(p2);
-
-			break;
-		// p2 on the border
-		case(1):
-			newNodeTmp.push_back(p2);
-			break;
-	      }
-	      break;
-      case(1):
-	      switch(bound2)
-	      {
-		// p1 on the border
-		case(0):
-			newNodeTmp.push_back(p1);
-			break;
-		// p1 e p2 both on the bordo
-		/// ma si deve controllare davvero se sono effettivamente un edge (??)
-		case(1):
-			if(isBoundary(edge))
-			{
-			    // control on the geoIds around to preserve the mesh angles
-			    geoIdAround(edge.at(0), &geoIds1);
-			    geoIdAround(edge.at(1), &geoIds2);
-
-			    if((geoIds1.size()>2) && (geoIds2.size()==2))	              /// GEOIDS SIZE??
-                    newNodeTmp.push_back(p1);
-			    else if((geoIds1.size()==2) && (geoIds2.size()>2))
-                        newNodeTmp.push_back(p2);
-                     else
-                    {
-                        // compute the middle point
-                        pMid.replace(p1,p2,0.5);
-                        // this time it is on th border
-                        pMid.setBoundary(1);
-                        newNodeTmp.push_back(pMid);
-
-                        newNodeTmp.push_back(p1);
-                        newNodeTmp.push_back(p2);
-			    }
-			}
-			break;
-	      }
-	      break;
-    }
-
-    // control on the identified nodes to check if they may lead to the inversion problem
-    newNodes.clear();
-    newNodes.reserve(newNodeTmp.size());
-    for(UInt i=0; i<newNodeTmp.size(); ++i)
-            if(controlColl(edge, newNodeTmp[i]))                   ///CONTROLCOLL?
-                newNodes.push_back(newNodeTmp[i]);
-}
-
-
-Real costClass::getEdgeCost(const vec & QEdge, const point pNew){
-      // variables
-      vector<Real>	 v, vTmp;
+      vec	 v, vTmp;
+      Real      c;
 
       // v contains the coordinates of pNew and 1 in fourth position
       v.assign(4,1.0);
@@ -308,51 +191,9 @@ Real costClass::getEdgeCost(const vec & QEdge, const point pNew){
       vTmp[3] = QEdge.at(3)*v[0] + QEdge.at(7)*v[1] + QEdge.at(11)*v[2] + QEdge.at(15)*v[3];
 
       // return value is the inner product
-      return(inner_product(v1.begin(), v1.end(), vTmp.begin(), 0.0));
-}
+      c = inner_product(v.begin(), v.end(), vTmp.begin(), 0.0);
 
-
-pair<point, Real> costClass::getEdgeCost(vector<UInt> & edge){
-
-      // variables
-      Real 	  	            cost, costTmp;
-      point                 pNew;
-      vector<point>	        newNodes;
-      vec	                QEdge;
-      pair<point, Real >    result;
-
-      // create the edge matrix QEdge
-      QEdge = createQ(edge);
-
-      // create the list of test nodes
-      createPointList(edge, &newNodes);
-l
-      // no valid test nodes
-      if(newNodes.size()==0)
-      {
-            result.first = pNull;
-            return(result);
-      }
-
-      // take the first pair point-cost and then compare with others in newNodes
-      result.first = newNodes[0];
-      result.second = getEdgeCost(QEdge, newNodes[0]);
-
-      for(UInt i=1; i<newNodes.size(); ++i)
-      {
-            // compute the cost
-            costTmp = getEdgeCost(QEdge, newNodes[i]);
-
-            // substitute if the cost is minor
-            if(costTmp<result.second)
-            {
-                result.first = newNodes[i];
-                result.second = costTmp;
-            }
-      }
-
-      // return the pair <collapsePoint, cost>
-      return(result);
+      return(c);
 }
 
 

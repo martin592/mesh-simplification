@@ -8,12 +8,12 @@ namespace geometry{
     //
     public:
         /*! Get the first end point */
-        INLINE point getA() const {
+        INLINE UInt getA() const {
             return a;
         };
 
         /*! Get the second end point */
-        INLINE point getB() const {
+        INLINE UInt getB() const {
             return b;
         };
 
@@ -23,7 +23,7 @@ namespace geometry{
         };
 
         /*! Get the cost */
-        INLINE point getCost() const {
+        INLINE Real getCost() const {
             return cost;
         };
 
@@ -32,12 +32,12 @@ namespace geometry{
     //
     public:
         /*! Set the first end point*/
-        INLINE void setA(const point a_) {
+        INLINE void setA(const UInt a_) {
             a = a_;
         };
 
         /*! Set the second end point*/
-        INLINE void setB(const point b_) {
+        INLINE void setB(const UInt b_) {
             b = b_;
         };
 
@@ -47,7 +47,7 @@ namespace geometry{
         };
 
         /*! Set the cost*/
-        INLINE void setCost(const point c) {
+        INLINE void setCost(const Real c) {
             cost = c;
         };
 }

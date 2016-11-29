@@ -12,7 +12,7 @@
 #include <numeric>
 
 #include "utility.hpp"
-#include "doctor.hpp"
+#include "meshOperation.h"
 #include "costClass.hpp"
 #include "collapsingEdge.h"
 
@@ -44,18 +44,16 @@ namespace geometry
 
         TO DO:
             - The statistical part of the simplication process has to be implemented yet
-            - The collapse function must be enriched to take in account the case the edge
-              is close to the border
      */
 
-    template<typename SHAPE, typename MT> class simplification : public doctor<SHAPE,MT>
+    template<typename SHAPE, typename MT> class simplification
     {
     };
 
 
     /*! Specialization for the triangular meshes */
 
-    template<> class simplification<Triangle,MT> : public doctor<Triangle,MT>
+    template<> class simplification<Triangle,MT>
 {
       //
       // Attributes
@@ -66,34 +64,58 @@ namespace geometry
 		  /*! Set of edges ordered by cost (ascending order) */
 		  set<collapsingEdge>      collapsingSet;
 
-
       private:
 
-          /*! Variable responsible for the cost computing of the edges */
-          costClass        costObj;
+          /*! MeshOperation Object  */
+          meshOperation<Triangle,MT>      gridOperation;
+
+          /*! Pointer to a costClass object for the cost computing of the edges */
+          costClass  *                  costObj;
 
     //
     // Constructors
     //
 
     public:
+
 		  /*! (Default) Constructor
                 \param _meshPointer pointer to the mesh */
-		  simplification(smart_ptr<mesh<Triangle,MT>> _grid = nullptr);
+		  simplification(mesh<Triangle,MT> * _grid = nullptr);
 
 		  /*! Method which changes the pointer to the mesh
 		    \param _meshPointer pointer to the mesh */
-		  void setGrid(const smart_ptr<mesh<Triangle,MT>> _grid);
+		  void setGrid(const mesh<Triangle,MT> * _grid);
 
           /*! Method that builds the set of CollapsingEdge ordered by cost.
               The method uses the edge list from the connections and adds the cost information. */
-		  void setUpCollapsingSet();
+		  void setupCollapsingSet();
 
 		  /*! Method which makes the refresh of connections and other variables after collapse */
           void refresh();
 
+
+      //
+      // Methods for finding matrices and point for the collapse and cost computing
+      //
+
+      public:
+          /*! Method that returns the optimal point from Qtilde
+                \param edge */
+          point createOptimalPoint(const vector<UInt> & edge) const;
+
+		  /*! Method which creates the list of nodes to test
+              The method considers inversion problems, the optimal point exceptions and the border end points
+                \param edge
+                \param newNodes list of test points */
+		  void createPointList(const vector<UInt> & edge, const vector<point> & newNodes) const;
+
+          /*! Method which return the collapse point with minimum cost and the cost itself
+                \param edge */
+ 		  pair<point, Real> getEdgeCost(const vector<UInt> & edge) const;
+
+
 	//
-	// Method which creates the list
+	// Method fort the update of the mesh and the connections
 	//
 
 	public:
@@ -101,29 +123,12 @@ namespace geometry
 		  /*! Method which updates the collapsingSet and the connections after each contraction */
 		  void update(const vector<UInt> & edge, const point collapsePoint, const vector<UInt> & involved);
 
-	//
-	// Methods for the controls
-	//
-
-	public:
-		 /*! Control on the correctness of the collapse.
-		 The method involves:
-              - check of the inversion of the normals
-              - control of the maintaimnent of two triangles insisting on each edge
-		     \param edge contracted
-		     \param pNew new point */
-		 bool control(const vector<UInt> & edge, const point pNew);
 
 	//
 	// Methods which make the simplification
 	//
 
 	public:
-	    /*! Modification of the mesh after edge contraction
-            //  In particular it performs:
-            //     -  the update of the new node in the list with the id of the first end point,
-            //     -  the inactivation of the second end point in the nodes list. */
-        void simplification<SHAPE,MT>::collEdge(const vector<UInt> & edge, const point collapsePoint);   /// DA METTERE IN DOCTOR?
 
         /*! Method which iteratively contracts the edge with minimum cost until reaching a maximum
               amount of nodes
