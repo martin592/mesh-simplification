@@ -9,68 +9,114 @@
 #include <array>
 #include <set>
 #include <functional>
+#include <exception>
+#include <type_traits>
 #include <numeric>
+#include <iterator>
+#include <utility>
 
 #include "utility.hpp"
-#include "meshOperation.h"
-#include "costClass.hpp"
+#include "bmeshOperation.h"
+#include "bcost.hpp"
 #include "collapsingEdge.h"
-
-
-
-using vec = vector<Real>;
+#include "intersection.hpp"
+#include "structuredData.hpp"
+#include "geoPoint.hpp"
+#include "geoElement.hpp"
+#include "geoElementSize.h" /// STILL TO DO
 
 namespace geometry
 {
 
     /*! Class for the simplification process on the mesh elements by iterative edge collapse.
         The selection of the edge to contract is done with respect to a cost functional
-        which measures the loss of geometrical (and statistical) information for the analysis;
-        at each iteration the edge with minimum cost is collapsed into a predefined point.
-        The edges are organized in a set in ascending order with respect to their costs.
+        which measures the loss of information for the analysis. In case of a meshType MT::GEO,
+        the loss of information is just geometrical, otherwise for meshType MT::DATA the cost
+        functional takes into account the loss of statistical information as well.
+
+        At each iteration the edge with minimum cost is collapsed into a predefined point.
+        The edges are organized in a set in ascending order with respect to their costs called
+        collapsingSet which is used to extract the edge to contract. In case the edge has to be
+        searched for its ending points, refer to the unordered set cInfoList contained in the
+        cost class object.
 
         The point for the collapse is chosen among the two ending points of the selected edge,
         their middle point and the so-called optimal point. The latter derives from an explicit
-        formula based on proposition 5.2.2 from the thesis essay "Advanced Techniques for the
+        analytical formula based on proposition 5.2.2 from the thesis essay "Advanced Techniques for the
         Generation and the Adaptation of Complex Surface Meshes" by F. Dassi.
-        The selection of the collapsing point takes into account wheter the edge or a point of its
-        lies on the border.
+
+        The selection of the collapsing point depends on several controls. First of all, the control
+        in the cost class takes into account wheter the edge or an endpoint belongs to the border.
+        In addition, the elected point has to pass the following geometric controls:
+            - the collapse does not invert triangles
+            - the contraction has to not bring to mesh self-intersections
+            - no degenerated triangles are generated
+        In case the meshType is of type DATA, there are the further data controls.
+            - the fixed element is not affected by the edge collapse
+            - no empty triangle are created after the data projection
 
         Each edge collapse is implemented by setting the id of the collapse point to the id of an
         end point (the one with minor id) and setting to inactive the flag of the second end point.
         The elements which insist on the edge are removed from the mesh.
         Subsequently, the costs of the involved edges are recomputed and the connections are
-        locally updated.
+        locally updated. In case of mesh DATA the involved data points are projected.
 
-        TO DO:
-            - The statistical part of the simplication process has to be implemented yet
+        The class presents three templates:
+            1. SHAPE, geometrical shape of the elements of the mesh
+            2. MeshType, GEO or DATA, whether the mesh contains only mesh points or mesh and data points
+            3. CostType, OnlyGeo or GeoData, wheter the cost used is based only on the geometrical information
+                                             or also on the statical
+        The critical situation corresponds to a CostType::GeoData in combination with a MeshType::GEO. This
+        conflicting situation is handled at compile time in the constructor checking the templates coherence
+        with type_trades.
+
+        The class contains the following attributes:
+            \param gridOperation, object of conditional class depending on the meshType:
+                        - if MT::GEO, it corresponds to a meshInfo object
+                        - if MT::DATA, it is a projection object to handle distrubuted data
+            \param costObj, cost class of costType CT
+            \param collapsingSet, set of collapsingEdges ordered by cost in ascending order
+            \param intersec, interesection object for the related control
+            \param structData, data structure necessary to support the intersection control
+            \param dontTouch, boolean to indicate if the fixed element is used
+            \param elemDontTouchId, id of the fixed element
      */
 
-    template<typename SHAPE, typename MT> class simplification
+    template<typename SHAPE, MeshType MT, CostType CT> class simplification
     {
     };
 
 
     /*! Specialization for the triangular meshes */
 
-    template<> class simplification<Triangle,MT>
+    template<>
+    class simplification<Triangle, MT, CostType>
 {
       //
       // Attributes
       //
-
-      public:
-
-		  /*! Set of edges ordered by cost (ascending order) */
-		  set<collapsingEdge>      collapsingSet;
-
       private:
 
-          /*! MeshOperation Object  */
-          meshOperation<Triangle,MT>      gridOperation;
+        /*! MeshOperation Object  */
+        bmeshOperation<Triangle,MT>      gridOperation;
 
-          /*! Pointer to a costClass object for the cost computing of the edges */
-          costClass  *                  costObj;
+        /*! CostClass object for the cost computing of the edges */
+        costType                  costObj;
+
+        /*! Set of edges ordered by cost (ascending order) */
+        set<collapsingEdge>      collapsingSet;
+
+        /*!  object for the control of triangle intersections */
+        intersection<Triangle>    intersec;
+
+        /*! object for the bounding boxes structure  */
+        structuredData<Triangle>     strucData;
+
+        /*! fixed element to not touch */
+        //  boolean to indicate if it used or not
+        bool          dontTouch;
+        // id of the element
+        UInt          elemDontTouchId;
 
     //
     // Constructors
@@ -79,40 +125,102 @@ namespace geometry
     public:
 
 		  /*! (Default) Constructor
-                \param _meshPointer pointer to the mesh */
+                \param _grid pointer to the mesh */
 		  simplification(mesh<Triangle,MT> * _grid = nullptr);
 
 		  /*! Method which changes the pointer to the mesh
-		    \param _meshPointer pointer to the mesh */
+		    \param _grid pointer to the mesh */
 		  void setGrid(const mesh<Triangle,MT> * _grid);
 
-          /*! Method that builds the set of CollapsingEdge ordered by cost.
+          /*! Method that builds the set of CollapsingEdge ordered by cost and
+              the unordered set of cInfoList in the cost class
               The method uses the edge list from the connections and adds the cost information. */
 		  void setupCollapsingSet();
+
+		  /*!   IMPORTANT
+              Method which takes the cost data for the contraction of the edge.
+              The function operates by step:
+                - extracts from the cost class object the list of possible collapse points
+                - controls the validity of the points
+                - takes from the cost class object the minimum cost value
+                \param id1, id2, ids of the end points of teh edge to contract
+                The method returns a pair with the minimum cost and the collapse point associated*/
+		  pair<point,Real> getCost(const UInt id1, const UInt id2);
+
+		  /*!   IMPORTANT
+                Method that differently to the previous version first compute all the costs for
+                the possible collapse points and then check if the one with minimum cost is valid.
+                If not the point with the second smaller cost is checked and so on.
+                This implementation should be more efficient because saves time for the controls*/
+		  pair<point,Real> getCost2(const UInt id1, const UInt id2);
+
 
 		  /*! Method which makes the refresh of connections and other variables after collapse */
           void refresh();
 
+    //
+    // Methods for the elemDontTouch handling
+    //
+
+        /*! get/set for dontTouch*/
+        INLINE void activeDontTouch(){
+		      dontTouch=true;
+		      };
+
+        INLINE void disactiveDontTouch(){
+		      dontTouch=false;
+		      };
+
+        INLINE bool getDontTouch(){
+		      return(dontTouch);
+		      };
+
+        /*! get/set for elemDontTouch */
+        INLINE void setElemDontTouch(UInt _elemDontTouch){
+            elemDontTouch=_elemDontTouch;
+            };
+
+        INLINE UInt getElemDontTouch(){
+            return(elemDontTouch);
+            };
+
+
+       /*! Method which automatically finds the element to fix */
+		  void findElemDontTouch();
+
 
       //
-      // Methods for finding matrices and point for the collapse and cost computing
+      // Methods for specific controls
       //
 
       public:
-          /*! Method that returns the optimal point from Qtilde
-                \param edge */
-          point createOptimalPoint(const vector<UInt> & edge) const;
 
-		  /*! Method which creates the list of nodes to test
-              The method considers inversion problems, the optimal point exceptions and the border end points
-                \param edge
-                \param newNodes list of test points */
-		  void createPointList(const vector<UInt> & edge, const vector<point> & newNodes) const;
+        /*! Method which controls that each edge maintains exactly two adjacent triangles */
+        bool controlLocalGrid(const vector<UInt> & involved, const vector<UInt> & edgePatch,
+                                                                        const vector<UInt> & toRemove);
 
-          /*! Method which return the collapse point with minimum cost and the cost itself
-                \param edge */
- 		  pair<point, Real> getEdgeCost(const vector<UInt> & edge) const;
+        /*! Method to check that the selected edge do not edge affect the element to not touch
+		      \param toRemove, elements which insist on the collapsing edge
+		      \param involved, elements which change after the contraction
+            It return true if the fixed element is not touched, false otherwise*/
+        bool controlDontTouch(const vector<UInt> & toRemove, const vector<UInt> & involved);
 
+    //
+    // Global Controls
+    //
+        /*! Method to check on the validity on the collapse of the edge in pNew
+		    \param edge
+		    \param pNew collapse point */
+        template<MT>
+		bool controlCollapse(const vector<UInt> & edge, point pNew);
+
+        /*! Method to check on the validity on the validity of a list of points
+		    \param edge to test for the collapse
+		    \param pointsToTest, list of points to check
+		    The method reduces the input pointsToTest to the sublist of the valid points, i.e. the ones which
+		    passed all the control tests */
+        template<MT>
+        void controlList(const vector<UInt> & edge, vector<point> & pointsToTest);
 
 	//
 	// Method fort the update of the mesh and the connections
@@ -120,9 +228,10 @@ namespace geometry
 
 	public:
 
-		  /*! Method which updates the collapsingSet and the connections after each contraction */
-		  void update(const vector<UInt> & edge, const point collapsePoint, const vector<UInt> & involved);
-
+		  /*! Method which updates the collapsingSet, the cInfoList and the connections after each contraction
+		  \param edge
+		  \param collapsePoint */
+		  void update(const vector<UInt> & edge, const point collapsePoint);
 
 	//
 	// Methods which make the simplification
@@ -134,6 +243,13 @@ namespace geometry
               amount of nodes
 		      \param numNodesMax maximum number of nodes */
         void simplificate(const UInt numNodesMax);
+
+
+//        /*! Method which iteratively contracts the edge with minimum cost until reaching a maximum
+//              amount of nodes
+//		      \param numNodesMax maximum number of nodes
+//		      \param collapseNumber number of edge of contractions per each iteration */
+//        void simplificateGreedy(const UInt numNodesMax, const UInt collapseNumber);
 
 }
 
