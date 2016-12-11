@@ -93,12 +93,20 @@ pair<point, Real> simplification<Triangle,MT,CostType>::getCost(const UInt id1, 
     return(costPair);
 }
 
+struct ComparePairCost
+{
+    bool operator ()(const pair<point,Real> &a, const pair<point,Real> &b)
+    {
+        return a.second < b.second;
+    }
+};
+
 
 pair<point, Real> simplification<Triangle,MT,CostType>::getCost2(const UInt id1, const UInt id2)
 {
     // variables
     Real c;
-    set<pair<point,Real>> costPairs;  /// TO ORDER WITH RESPECT TO THE SECOND ARGUMENT
+    set<pair<point,Real>,ComparePairCost> costPairs;  // ordered with respect to the second argument
     vector<point> pointsToTest;
     vector<UInt> edge={id1,id2};
 
@@ -208,6 +216,166 @@ bool simplification<Triangle,MT,CostType>::controlDontTouch(const UInt id1, cons
 
 // specialize for geometric mesh
 template<>
+bool simplification<Triangle,MT,CostType>::controlCollapsePoint<MT::GEO>(const vector<UInt> & edge, const point)
+{
+//variables
+    bool            valid=true;
+    Real            area;
+    UInt            id1, id2, oldP1;
+    vector<UInt>    elemOnEdge, involved, allInvolved;
+    vector<point3d> oldNormals;
+
+    // set the ids
+    id1 = edge[0];
+    id2 = edge[1];
+
+    // store the old point
+    oldP1 = gridOperation.getPointerToMesh()->getNode(id1);
+    // set the second id inactive
+    gridOperation.getPointerToMesh()->setNodeInactive(id2);
+
+    // set the involved mesh elements in the collapse
+    elemsOnEdge = gridOperation.getElemsOnEdge();
+    allInvolved = gridOperation.getElemsInvolvedInEdgeCollapsing(id1,id2);
+    involved = gridOperation.getElemsModifiedInEdgeCollapsing(id1,id2);
+
+    // set the normals before the test collapse
+    oldNormals.resize(involved.size());
+    for (UInt i=0; i<involved.size(); i++)
+        oldNormals.emplace_back(gridOperation.getNormal(involved[i]));
+
+
+    auto conn = gridOperation.getPointerToConnectivity();
+    auto oldConnections = conn->applyEdgeCollapse(id2, id1, elemsOnEdge, involved);
+
+    valid=true;
+
+    gridOperation.getPointerToMesh()->setNode(id1, point);
+
+    strucData.update(involved);
+
+    for (auto it = involved.cbegin(), auto oldNorm = oldNormals.cbegin(); it1 != involved.cend() && oldNorm != oldNormals.cend(); ++it, ++oldNorm)
+    {
+            // control inversions
+            valid =  ((*oldNorm) * gridOperation.getNormal(*it) > sqrt(3)/2);
+            if (!valid)
+                return(false);
+
+            // control on no self-intersections
+            auto elems = strucData.getNeighbouringElements(*it);
+            for (auto it2 = elems.cbegin(); it2 != elems.cend() && valid; ++it2)
+					valid = !(intersec.intersect(*it, *it2));
+            if (!valid)
+                return(false);
+
+            // control on no triangle degeneration
+            area = gridOperation.getTriArea(*it);
+            valid = !(area<TOLL);
+            if (!valid)
+                return(false);
+
+            /// INSERT LOCAL CONTROL ON 2 ADJACENT EDGES?
+    }
+
+    // restore connections
+    conn->undoEdgeCollapse(id2, id1, oldConnections.first, oldConnections.second, elemsOnEdge, involved);
+
+    // Restore list of nodes
+    gridOperation.getPointerToMesh()->setNode(id1, oldP1);
+    gridOperation.getPointerToMesh()->setNodeActive(id2);
+
+    // Restore structured data
+    strucData.update(involved);
+
+    return(true);
+}
+
+
+// specialize for data mesh
+template<>
+bool simplification<Triangle,MT,CostType>::controlCollapsePoint<MT::DATA>(const vector<UInt> & edge, const point P)
+{
+//variables
+    bool            valid=true;
+    Real            area;
+    UInt            id1, id2, oldP1;
+    vector<UInt>    elemOnEdge, involved, allInvolved;
+    vector<point3d> oldNormals;
+
+    // set the ids
+    id1 = edge[0];
+    id2 = edge[1];
+
+    // store the old point
+    oldP1 = gridOperation.getPointerToMesh()->getNode(id1);
+    // set the second id inactive
+    gridOperation.getPointerToMesh()->setNodeInactive(id2);
+
+    // set the involved mesh elements in the collapse
+    elemsOnEdge = gridOperation.getElemsOnEdge();
+    allInvolved = gridOperation.getElemsInvolvedInEdgeCollapsing(id1,id2);
+    involved = gridOperation.getElemsModifiedInEdgeCollapsing(id1,id2);
+
+    // set the normals before the test collapse
+    oldNormals.resize(involved.size());
+    for (UInt i=0; i<involved.size(); i++)
+        oldNormals.emplace_back(gridOperation.getNormal(involved[i]));
+
+
+    auto conn = gridOperation.getPointerToConnectivity();
+    auto oldConnections = conn->applyEdgeCollapse(id2, id1, elemsOnEdge, involved);
+
+    valid=true;
+
+    gridOperation.getPointerToMesh()->setNode(id1, P);
+
+    strucData.update(involved);
+
+    for (auto it = involved.cbegin(), auto oldNorm = oldNormals.cbegin(); it1 != involved.cend() && oldNorm != oldNormals.cend(); ++it, ++oldNorm)
+    {
+            // control inversions
+            valid =  ((*oldNorm) * gridOperation.getNormal(*it) > sqrt(3)/2);
+            if (!valid)
+                return(false);
+
+            // control on no self-intersections
+            auto elems = strucData.getNeighbouringElements(*it);
+            for (auto it2 = elems.cbegin(); it2 != elems.cend() && valid; ++it2)
+					valid = !(intersec.intersect(*it, *it2));
+            if (!valid)
+                return(false);
+
+
+            // control on empty triangles
+            valid = !(gridOperation.isEmpty(*it));
+            if (!valid)
+                return(false);
+
+            // control on no triangle degeneration
+            area = gridOperation.getTriArea(*it);
+            valid = !(area<TOLL);
+            if (!valid)
+                return(false);
+
+            /// INSERT LOCAL CONTROL ON 2 ADJACENT EDGES?
+    }
+
+    // restore connections
+    conn->undoEdgeCollapse(id2, id1, oldConnections.first, oldConnections.second, elemsOnEdge, involved);
+
+    // Restore list of nodes
+    gridOperation.getPointerToMesh()->setNode(id1, oldP1);
+    gridOperation.getPointerToMesh()->setNodeActive(id2);
+
+    // Restore structured data
+    strucData.update(involved);
+
+    return(true);
+}
+
+
+// specialize for geometric mesh
+template<>
 vector<point> simplification<Triangle,MT,CostType>::controlCollapse<MT::GEO>(const vector<UInt> & edge)
 {
     //variables
@@ -231,6 +399,11 @@ vector<point> simplification<Triangle,MT,CostType>::controlCollapse<MT::GEO>(con
     elemsOnEdge = gridOperation.getElemsOnEdge();
     allInvolved = gridOperation.getElemsInvolvedInEdgeCollapsing(id1,id2);
     involved = gridOperation.getElemsModifiedInEdgeCollapsing(id1,id2);
+
+    if(dontTouch)
+        valid=controlDontTouch(edge[0], edge[1]);
+    if(!valid)
+        return(false);
 
     // set the normals before the test collapse
     oldNormals.resize(involved.size());
@@ -291,7 +464,7 @@ vector<point> simplification<Triangle,MT,CostType>::controlCollapse<MT::GEO>(con
     return(validPoints);
 }
 
-// specialize for mesh with data distrubuted oon
+// specialize for mesh with data distributed on
 template<>
 vector<point> simplification<Triangle,MT,CostType>::controlCollapse<MT::DATA>(const vector<UInt> & edge)
 {
@@ -470,8 +643,8 @@ void simplification<Triangle,MT,CostType>::refresh(){
 }
 
 
-
-void simplification<Triangle,MT,CostType>::update(const vector<UInt> & edge, const point collapsePoint)
+template<>
+void simplification<Triangle,MT,CostType>::update<MT::DATA>(const vector<UInt> & edge, const point collapsePoint)
 {
     // variables
     Real                 c;
@@ -482,6 +655,12 @@ void simplification<Triangle,MT,CostType>::update(const vector<UInt> & edge, con
     pair<point,Real>    costPair;
 
     involvedEdges.push_back(edge);
+
+    // substitute the collapsePoint in the nodes list
+    gridOperation.getPointerToMesh->getNode(idCollapse).setCoor(collapsePoint);
+
+    // set the flag active second end point to false
+    gridOperation.getPointerToMesh->getNode(id2).setInactive();
 
     // take the patch of the contracted edge (endpoints excluded)
     edgePatch = gridOperation.getNodesInvolvedInEdgeCollapsing(idCollapse, edge.at(1));
@@ -503,6 +682,9 @@ void simplification<Triangle,MT,CostType>::update(const vector<UInt> & edge, con
                     newEdges.emplace_back(array<UInt,2>({edgePatch[i].getId(), id_ij }));
             }
     }
+    // remove the collapsed elements
+    for (UInt i=0; i<elemOnEdge.size(); i++)
+                    gridOperation.getPointerToMesh->eraseElem(elemOnEdge[i]);
 
     // remove the involvedEdges from collapsingSet and cInfoList
     for (UInt i=0; i<involvedEdges.size();i++){
@@ -523,6 +705,10 @@ void simplification<Triangle,MT,CostType>::update(const vector<UInt> & edge, con
     // update the cost class
     costObj.update(idCollapse);
 
+    // update the data structure
+    involved = gridOperation.getElemsModifiedInEdgeCollapsing(id1,id2);
+    strucData.update(involved);
+
     // adding the new edges to the collapsingSet and cInfoList computing their new costs
     for (UInt i=0; i<newEdges.size();i++){
 
@@ -533,56 +719,68 @@ void simplification<Triangle,MT,CostType>::update(const vector<UInt> & edge, con
     }
 }
 
-// specialize for geometric mesh
+
 template<>
-void simplification<Triangle,MT,CostType>::collapseEdge<MT::GEO>(const vector<UInt> & edge, const point collapsePoint){
-
+void simplification<Triangle,MT,CostType>::update<MT::DATA>(const vector<UInt> & edge, const point collapsePoint)
+{
     // variables
-    UInt id1, id2;
-    vector<UInt> toRemove, involved;
+    Real                 c;
+    UInt                 idCollapse = edge.at(0), id_ij;
+    vector<UInt>   	     edgePatch, elemOnEdge;
+    vector<vector<UInt>>  involvedEdges, newEdges;
+    collapsingSet::iterator  it_collEdge;
+    pair<point,Real>    costPair;
 
-    id1 = edge.at(0).getId();
-    id2 = edge.at(1).getId();
+    involvedEdges.push_back(edge);
 
     // substitute the collapsePoint in the nodes list
-    grid->getNode(id1).setCoor(collapsePoint);
+    gridOperation.getPointerToMesh->getNode(idCollapse).setCoor(collapsePoint);
 
     // set the flag active second end point to false
-    grid->getNode(id2).setInactive();
+    gridOperation.getPointerToMesh->getNode(id2).setInactive();
 
-    // remove the collapsed elements from the elems list in the mesh
-    toRemove = getElemsOnEdge(id1,id2);
-    for (UInt i=0; i<toRemove.size(); i++)
-                    grid->eraseElem(toRemove[i]);
+    // take the patch of the contracted edge (endpoints excluded)
+    edgePatch = gridOperation.getNodesInvolvedInEdgeCollapsing(idCollapse, edge.at(1));
+    elemOnEdge = gridOperation.getElemsOnEdge(idCollapse, edge.at(1));
+    // loop on the nodes connected with the edge
+    for (UInt i=0; i<edgePatch.size(); i++){
 
-    // update the data structure
-    involved = gridOperation.getElemsModifiedInEdgeCollapsing(id1,id2);
-    strucData.update(involved);
+            // inner loop over all the nodes connected to the patch
+            for (UInt j=0; j<gridOperation.getPointerToConnectivity->getNode2Node(edgePatch[i]).size();j++){
 
-}
+                id_ij = gridOperation.getPointerToConnectivity->getNode2Node(edgePatch[i].getId()).getConnected()[j];
 
+                involvedEdges.emplace_back(array<UInt,2>({edgePatch[i].getId(), id_ij }));
 
-// specialize for mesh with data distributed on
-template<>
-void simplification<Triangle,MT,CostType>::collapseEdge<MT::DATA>(const vector<UInt> & edge, const point collapsePoint){
+                // the second endpoint is not anymore active
+                if (id_ij==edge.at(1))
+                    newEdges.emplace_back(array<UInt,2>({edgePatch[i].getId(), idCollapse }));
+                else
+                    newEdges.emplace_back(array<UInt,2>({edgePatch[i].getId(), id_ij }));
+            }
+    }
+    // remove the collapsed elements
+    for (UInt i=0; i<elemOnEdge.size(); i++)
+                    gridOperation.getPointerToMesh->eraseElem(elemOnEdge[i]);
 
-    // variables
-    UInt id1, id2;
-    vector<UInt> toRemove, involved, oldData;
+    // remove the involvedEdges from collapsingSet and cInfoList
+    for (UInt i=0; i<involvedEdges.size();i++){
 
-    id1 = edge.at(0).getId();
-    id2 = edge.at(1).getId();
+        // erase the edge from cInfoList and take the cost information
+        c = costObj.eraseCollapseInfo(involvedEdges[i].at(0),involvedEdges[i].at(1));
 
-    // substitute the collapsePoint in the nodes list
-    grid->getNode(id1).setCoor(collapsePoint);
+        // search by cost in the collapsingSet
+        it_collEdge = collapsingSet.find(c);
 
-    // set the flag active second end point to false
-    grid->getNode(id2).setInactive();
+        // erase the edge in both the collapsing set
+        collapsingSet.erase(it_colleEdge);
+    }
 
-    // remove the collapsed elements from the elems list in the mesh
-    toRemove = getElemsOnEdge(id1,id2);
-    for (UInt i=0; i<toRemove.size(); i++)
-                    grid->eraseElem(toRemove[i]);
+    // update the connections in connectivity
+    gridOperation.getPointerToConnectivity->applyEdgeCollapsing( edge.at(1), idCollapse, elemOnEdge, edgePatch);
+
+    // update the cost class
+    costObj.update(idCollapse);
 
     // update the data structure
     involved = gridOperation.getElemsModifiedInEdgeCollapsing(id1,id2);
@@ -591,6 +789,15 @@ void simplification<Triangle,MT,CostType>::collapseEdge<MT::DATA>(const vector<U
     // project the data
     toProject = gridOperation.getDataModifiedInEdgeCollapsing(id1,id2);
     auto oldData = gridOperation.project(toProject, involved);
+
+    // adding the new edges to the collapsingSet and cInfoList computing their new costs
+    for (UInt i=0; i<newEdges.size();i++){
+
+                costPair = getCost(newEdges[i]);
+
+                collapsingSet.emplace(id1, id2, costPair.first, costPair.second);
+                costObj.addCollapseInfo(id1, id2, costPair.first, costPair.second);
+    }
 }
 
 
@@ -628,11 +835,8 @@ void simplification<Triangle,MT,CostType>::simplificate(const UInt numNodesMax)
             edge[0] = minCostEdge->getA();
             edge[1] = minCostEdge->getB();
 
-            // collapse the edge in collapsePoint p
-            collapseEdge<MT>(edge, p);
-
-            // updates collapsingSet, collapseInfo and the connections
-            update(edge, collapsePoint);
+            // updates the mesh, the connectivities, the data structure,  collapsingSet and collapseInfo
+            update<MT>(edge, p);
 
             // decrease the number of nodes
             --numNode;

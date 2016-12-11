@@ -193,7 +193,7 @@ namespace geometry
       // Methods for specific controls
       //
 
-      public:
+      private:
 
         /*! Method which controls that each edge maintains exactly two adjacent triangles */
         bool controlLocalGrid(const vector<UInt> & involved, const vector<UInt> & edgePatch,
@@ -208,29 +208,40 @@ namespace geometry
     //
     // Global Controls
     //
-        /*! Method to check on the validity on the collapse of the edge in pNew
-		    \param edge
-		    \param pNew collapse point */
-        template<MT>
-		bool controlCollapse(const vector<UInt> & edge, point pNew);
+    private:
+        /*! Method for check on the validity on the collapse of the edge into the specific input point P
+            It is a template method on the meshType.
+            If MT::DATA, there are the additional controls on the empty triangles and on the fixed element;
+            in this case, the method projects the data points involved and undoes the projection after each control.
+		    \param edge to contract
+		    \param P collapse point */
 
-        /*! Method to check on the validity on the validity of a list of points
-		    \param edge to test for the collapse
-		    \param pointsToTest, list of points to check
-		    The method reduces the input pointsToTest to the sublist of the valid points, i.e. the ones which
-		    passed all the control tests */
         template<MT>
-        void controlList(const vector<UInt> & edge, vector<point> & pointsToTest);
+        bool controlCollapsePoint(const vector<UInt> & edge, const point P)
+
+        /*! Method to check the validity on the collapse of the edge. It considers all the possible collapse
+            points proposed by the cost class.
+            The function tries the update of connections, performs the controls and undo the operations.
+            It is a template method on the meshType.
+            If MT::DATA, there are the additional controls on the empty triangles and on the fixed element;
+            in this case, the method projects the data points involved and undoes the projection after each control.
+		    \param edge to contract */
+        template<MT>
+		bool controlCollapse(const vector<UInt> & edge);
 
 	//
 	// Method fort the update of the mesh and the connections
 	//
 
-	public:
+	private:
 
-		  /*! Method which updates the collapsingSet, the cInfoList and the connections after each contraction
+		  /*! Method which updates the mesh, the connectivities, the data structure, the collapsingSet
+		  and the cInfoList after each contraction.
+		  It is a template method on the meshType.
+		  In case mesh::DATA, there is the further update of the distribution of the data points.
 		  \param edge
 		  \param collapsePoint */
+		  template<MT>
 		  void update(const vector<UInt> & edge, const point collapsePoint);
 
 	//
