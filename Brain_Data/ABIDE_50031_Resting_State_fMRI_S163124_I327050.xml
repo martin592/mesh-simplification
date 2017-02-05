@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idaxs xmlns="http://ida.loni.ucla.edu"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="/xsds/idaxs_2_0.xsd">
+<project xmlns="">
+  <projectIdentifier>ABIDE</projectIdentifier>
+  <projectDescription>Autism Brain Imaging Data Exchange</projectDescription>
+  <subject>
+    <subjectIdentifier>50031</subjectIdentifier>
+    <researchGroup>Control</researchGroup>
+    <subjectSex>M</subjectSex>
+    <subjectInfo item="Dx Category">Control</subjectInfo>
+    <visit>
+      <visitIdentifier>Baseline</visitIdentifier>
+    </visit>
+    <study>
+      <studyIdentifier>49300</studyIdentifier>
+      <subjectAge>12.92</subjectAge>
+      <ageQualifier>Y</ageQualifier>
+      <weightKg>0.0</weightKg>
+      <postMortem>F</postMortem>
+      <series>
+        <seriesIdentifier>163124</seriesIdentifier>
+        <modality>fMRI</modality>
+        <dateAcquired>2000-01-01 00:00:00.0</dateAcquired>
+        <imagingProtocol>
+          <imageUID>327050</imageUID>
+          <description>Resting State fMRI</description>
+          <protocolTerm>
+            <protocol term="Manufacturer">29</protocol>            
+            <protocol term="Mfg Model">Siemens</protocol>            
+            <protocol term="Field Strength">3.0</protocol>            
+            <protocol term="Pulse Sequence"></protocol>            
+            <protocol term="TE">25.0</protocol>            
+            <protocol term="TR">1500.0</protocol>            
+            <protocol term="Flip Angle">70</protocol>            
+            <protocol term="Matrix X">3</protocol>            
+            <protocol term="Matrix Y">3</protocol>            
+            <protocol term="Slices">29</protocol>            
+            <protocol term="Pixel Spacing X">64.0</protocol>            
+            <protocol term="Pixel Spacing Y">64.0</protocol>            
+            <protocol term="Slice Thickness"></protocol>            
+          </protocolTerm>
+        </imagingProtocol>
+      </series>
+    </study>    
+  </subject>
+</project>
+</idaxs>
