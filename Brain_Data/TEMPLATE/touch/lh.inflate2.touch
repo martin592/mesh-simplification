@@ -1,0 +1,1 @@
+mris_inflate -rusage /home/marco/Desktop/SUBJECTS_freeSurfer/TEMPLATE/touch/rusage.mris_inflate.lh.dat ../surf/lh.smoothwm ../surf/lh.inflated

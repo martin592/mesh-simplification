@@ -1,0 +1,144 @@
+status file for recon-all
+Thu Feb  9 10:52:08 CET 2017
+recon-all -s TEMPLATE finished without error at Thu Feb  9 10:52:13 CET 2017
+
+
+
+New invocation of recon-all 
+
+
+
+status file for recon-all
+Thu Feb  9 10:53:05 CET 2017
+#@# Make Pial Surf lh Thu Feb  9 10:53:05 CET 2017
+Linux marco-Lenovo-Yoga-2-Pro 4.4.0-62-generic #83-Ubuntu SMP Wed Jan 18 14:10:15 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
+
+recon-all -s TEMPLATE exited with ERRORS at Thu Feb  9 10:53:05 CET 2017
+
+
+
+
+New invocation of recon-all 
+
+
+
+status file for recon-all
+Thu Feb  9 10:57:26 CET 2017
+#@# MotionCor Thu Feb  9 10:57:26 CET 2017
+#@# Talairach Thu Feb  9 10:57:38 CET 2017
+#@# Talairach Failure Detection Thu Feb  9 10:59:20 CET 2017
+#@# Nu Intensity Correction Thu Feb  9 10:59:20 CET 2017
+#@# Intensity Normalization Thu Feb  9 11:01:20 CET 2017
+#@# Skull Stripping Thu Feb  9 11:03:30 CET 2017
+recon-all -s TEMPLATE finished without error at Thu Feb  9 11:18:25 CET 2017
+
+
+
+New invocation of recon-all 
+
+
+
+status file for recon-all
+Thu Feb  9 14:01:09 CET 2017
+#@# EM Registration Thu Feb  9 14:01:09 CET 2017
+#@# CA Normalize Thu Feb  9 14:20:48 CET 2017
+#@# CA Reg Thu Feb  9 14:22:33 CET 2017
+#@# SubCort Seg Thu Feb  9 17:32:43 CET 2017
+#@# Merge ASeg Thu Feb  9 18:54:12 CET 2017
+#@# Intensity Normalization2 Thu Feb  9 18:54:12 CET 2017
+#@# Mask BFS Thu Feb  9 18:58:01 CET 2017
+#@# WM Segmentation Thu Feb  9 18:58:03 CET 2017
+#@# Fill Thu Feb  9 19:01:13 CET 2017
+#@# Tessellate lh Thu Feb  9 19:01:55 CET 2017
+#@# Tessellate rh Thu Feb  9 19:02:01 CET 2017
+#@# Smooth1 lh Thu Feb  9 19:02:07 CET 2017
+#@# Smooth1 rh Thu Feb  9 19:02:11 CET 2017
+#@# Inflation1 lh Thu Feb  9 19:02:16 CET 2017
+#@# Inflation1 rh Thu Feb  9 19:02:41 CET 2017
+#@# QSphere lh Thu Feb  9 19:03:07 CET 2017
+#@# QSphere rh Thu Feb  9 19:05:59 CET 2017
+#@# Fix Topology Copy lh Thu Feb  9 19:08:57 CET 2017
+#@# Fix Topology Copy rh Thu Feb  9 19:08:57 CET 2017
+#@# Fix Topology lh Thu Feb  9 19:08:57 CET 2017
+#@# Fix Topology rh Thu Feb  9 21:12:06 CET 2017
+#@# Make White Surf lh Thu Feb  9 22:50:42 CET 2017
+#@# Make White Surf rh Thu Feb  9 23:01:05 CET 2017
+#@# Smooth2 lh Thu Feb  9 23:12:24 CET 2017
+#@# Smooth2 rh Thu Feb  9 23:12:28 CET 2017
+#@# Inflation2 lh Thu Feb  9 23:12:33 CET 2017
+#@# Inflation2 rh Thu Feb  9 23:12:55 CET 2017
+#@# Curv .H and .K lh Thu Feb  9 23:13:18 CET 2017
+#@# Curv .H and .K rh Thu Feb  9 23:14:14 CET 2017
+#@# Curvature Stats lh Thu Feb  9 23:15:10 CET 2017
+#@# Curvature Stats rh Thu Feb  9 23:15:12 CET 2017
+recon-all -s TEMPLATE finished without error at Thu Feb  9 23:15:15 CET 2017
+
+
+
+New invocation of recon-all 
+
+
+
+status file for recon-all
+Thu Feb  9 23:55:49 CET 2017
+#@# Make Pial Surf lh Thu Feb  9 23:55:49 CET 2017
+Linux marco-Lenovo-Yoga-2-Pro 4.4.0-62-generic #83-Ubuntu SMP Wed Jan 18 14:10:15 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
+
+recon-all -s TEMPLATE exited with ERRORS at Thu Feb  9 23:55:59 CET 2017
+
+
+
+
+New invocation of recon-all 
+
+
+
+status file for recon-all
+Thu Feb  9 23:57:38 CET 2017
+#@# Make Pial Surf lh Thu Feb  9 23:57:38 CET 2017
+
+
+
+New invocation of recon-all 
+
+
+
+status file for recon-all
+Thu Feb  9 23:58:14 CET 2017
+#@# Sphere lh Thu Feb  9 23:58:14 CET 2017
+#@# Sphere rh Fri Feb 10 00:42:58 CET 2017
+#@# Surf Reg lh Fri Feb 10 01:57:26 CET 2017
+#@# Surf Reg rh Fri Feb 10 02:31:58 CET 2017
+#@# Jacobian white lh Fri Feb 10 03:11:29 CET 2017
+#@# Jacobian white rh Fri Feb 10 03:11:30 CET 2017
+#@# AvgCurv lh Fri Feb 10 03:11:31 CET 2017
+#@# AvgCurv rh Fri Feb 10 03:11:32 CET 2017
+#@# Cortical Parc lh Fri Feb 10 03:11:34 CET 2017
+#@# Cortical Parc rh Fri Feb 10 03:11:45 CET 2017
+#@# Make Pial Surf lh Fri Feb 10 03:11:57 CET 2017
+#@# Make Pial Surf rh Fri Feb 10 03:22:33 CET 2017
+#@# Surf Volume lh Fri Feb 10 03:33:42 CET 2017
+#@# Surf Volume rh Fri Feb 10 03:33:45 CET 2017
+#@# Cortical ribbon mask Fri Feb 10 03:33:48 CET 2017
+#@# Parcellation Stats lh Fri Feb 10 03:37:59 CET 2017
+#@# Parcellation Stats rh Fri Feb 10 03:38:47 CET 2017
+#@# Cortical Parc 2 lh Fri Feb 10 03:39:36 CET 2017
+#@# Cortical Parc 2 rh Fri Feb 10 03:39:49 CET 2017
+#@# Parcellation Stats 2 lh Fri Feb 10 03:40:03 CET 2017
+#@# Parcellation Stats 2 rh Fri Feb 10 03:40:28 CET 2017
+#@# Cortical Parc 3 lh Fri Feb 10 03:40:53 CET 2017
+#@# Cortical Parc 3 rh Fri Feb 10 03:41:04 CET 2017
+#@# Parcellation Stats 3 lh Fri Feb 10 03:41:15 CET 2017
+#@# Parcellation Stats 3 rh Fri Feb 10 03:41:38 CET 2017
+#@# WM/GM Contrast lh Fri Feb 10 03:42:03 CET 2017
+#@# WM/GM Contrast rh Fri Feb 10 03:42:08 CET 2017
+#@# Relabel Hypointensities Fri Feb 10 03:42:12 CET 2017
+#@# AParc-to-ASeg aparc Fri Feb 10 03:42:36 CET 2017
+#@# AParc-to-ASeg a2009s Fri Feb 10 03:46:38 CET 2017
+#@# AParc-to-ASeg DKTatlas Fri Feb 10 03:50:37 CET 2017
+#@# APas-to-ASeg Fri Feb 10 03:54:36 CET 2017
+#@# ASeg Stats Fri Feb 10 03:54:41 CET 2017
+#@# WMParc Fri Feb 10 03:57:49 CET 2017
+#@# BA_exvivo Labels lh Fri Feb 10 04:06:29 CET 2017
+#@# BA_exvivo Labels rh Fri Feb 10 04:09:54 CET 2017
+recon-all -s TEMPLATE finished without error at Fri Feb 10 04:13:22 CET 2017

@@ -1,0 +1,1 @@
+mri_convert /home/marco/Desktop/SUBJECTS_freeSurfer/TEMPLATE/mri/rawavg.mgz /home/marco/Desktop/SUBJECTS_freeSurfer/TEMPLATE/mri/orig.mgz --conform

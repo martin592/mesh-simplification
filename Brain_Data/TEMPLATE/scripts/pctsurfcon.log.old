@@ -1,0 +1,9 @@
+Logfile for pctsurfcon
+Fri Feb 10 03:42:03 CET 2017
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/TEMPLATE/scripts
+/usr/local/freesurfer/bin/pctsurfcon
+$Id: pctsurfcon,v 1.15 2016/02/12 21:43:15 zkaufman Exp $
+Linux marco-Lenovo-Yoga-2-Pro 4.4.0-62-generic #83-Ubuntu SMP Wed Jan 18 14:10:15 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
+FREESURFER_HOME /usr/local/freesurfer
+Cleaning up
