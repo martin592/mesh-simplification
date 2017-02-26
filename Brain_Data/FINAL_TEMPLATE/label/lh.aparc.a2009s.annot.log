@@ -1,0 +1,1255 @@
+Log file for annot2std
+sab 25 feb 2017, 23.18.26, CET
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+/usr/local/freesurfer/bin/annot2std --o label/lh.aparc.a2009s.annot --lh --f /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/list.subjects.txt --t FINAL_TEMPLATE --a aparc.a2009s --srcsurfreg sphere.reg.newtemplate --trgsurfreg sphere.reg
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+$Id: annot2std,v 1.5 2016/06/13 18:00:34 greve Exp $
+Linux marco-Lenovo-Yoga-2-Pro 4.4.0-64-generic #85-Ubuntu SMP Mon Feb 20 11:50:30 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
+#@# 1/20 50002_recon sab 25 feb 2017, 23.18.26, CET
+mri_annotation2label --subject 50002_recon --hemi lh --seg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.1.50002_recon.mgh --ctab /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.1.50002_recon.ctab --annotation aparc.a2009s --segbase 0
+subject = 50002_recon
+annotation = aparc.a2009s
+hemi = lh
+segfile = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.1.50002_recon.mgh
+surface   = white
+
+Reading surface 
+ /home/marco/Desktop/SUBJECTS_freeSurfer/50002_recon/surf/lh.white
+Loading annotations from /home/marco/Desktop/SUBJECTS_freeSurfer/50002_recon/label/lh.aparc.a2009s.annot
+Seg base 0
+Converting to a segmentation
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50002_recon --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.1.50002_recon.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.1.50002_recon.std.mgh
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50002_recon --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.1.50002_recon.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.1.50002_recon.std.mgh 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50002_recon
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.1.50002_recon.mgh
+srctype    = 
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.1.50002_recon.std.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = lh
+trghemi    = lh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = (null)
+label-trg  = (null)
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50002_recon/surf/lh.sphere.reg.newtemplate
+Loading source data
+Converting source to float
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/lh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 30885
+nTrg121 = 163842, nTrgMulti =     0, MnTrgMultiHits = 0
+nSrc121 = 89877, nSrcLost = 30885, nSrcMulti = 63066, MnSrcMultiHits = 1.17282
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.1.50002_recon.std.mgh
+#@# 2/20 50003_MRI sab 25 feb 2017, 23.18.32, CET
+mri_annotation2label --subject 50003_MRI --hemi lh --seg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.2.50003_MRI.mgh --ctab /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.2.50003_MRI.ctab --annotation aparc.a2009s --segbase 0
+subject = 50003_MRI
+annotation = aparc.a2009s
+hemi = lh
+segfile = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.2.50003_MRI.mgh
+surface   = white
+
+Reading surface 
+ /home/marco/Desktop/SUBJECTS_freeSurfer/50003_MRI/surf/lh.white
+Loading annotations from /home/marco/Desktop/SUBJECTS_freeSurfer/50003_MRI/label/lh.aparc.a2009s.annot
+Seg base 0
+Converting to a segmentation
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50003_MRI --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.2.50003_MRI.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.2.50003_MRI.std.mgh
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50003_MRI --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.2.50003_MRI.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.2.50003_MRI.std.mgh 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50003_MRI
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.2.50003_MRI.mgh
+srctype    = 
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.2.50003_MRI.std.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = lh
+trghemi    = lh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = (null)
+label-trg  = (null)
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50003_MRI/surf/lh.sphere.reg.newtemplate
+Loading source data
+Converting source to float
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/lh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 33159
+nTrg121 = 163842, nTrgMulti =     0, MnTrgMultiHits = 0
+nSrc121 = 86363, nSrcLost = 33159, nSrcMulti = 65923, MnSrcMultiHits = 1.1753
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.2.50003_MRI.std.mgh
+#@# 3/20 50004_MRI sab 25 feb 2017, 23.18.38, CET
+mri_annotation2label --subject 50004_MRI --hemi lh --seg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.3.50004_MRI.mgh --ctab /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.3.50004_MRI.ctab --annotation aparc.a2009s --segbase 0
+subject = 50004_MRI
+annotation = aparc.a2009s
+hemi = lh
+segfile = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.3.50004_MRI.mgh
+surface   = white
+
+Reading surface 
+ /home/marco/Desktop/SUBJECTS_freeSurfer/50004_MRI/surf/lh.white
+Loading annotations from /home/marco/Desktop/SUBJECTS_freeSurfer/50004_MRI/label/lh.aparc.a2009s.annot
+Seg base 0
+Converting to a segmentation
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50004_MRI --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.3.50004_MRI.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.3.50004_MRI.std.mgh
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50004_MRI --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.3.50004_MRI.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.3.50004_MRI.std.mgh 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50004_MRI
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.3.50004_MRI.mgh
+srctype    = 
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.3.50004_MRI.std.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = lh
+trghemi    = lh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = (null)
+label-trg  = (null)
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50004_MRI/surf/lh.sphere.reg.newtemplate
+Loading source data
+Converting source to float
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/lh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 28588
+nTrg121 = 163842, nTrgMulti =     0, MnTrgMultiHits = 0
+nSrc121 = 89894, nSrcLost = 28588, nSrcMulti = 61075, MnSrcMultiHits = 1.21077
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.3.50004_MRI.std.mgh
+#@# 4/20 50005_MRI sab 25 feb 2017, 23.18.44, CET
+mri_annotation2label --subject 50005_MRI --hemi lh --seg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.4.50005_MRI.mgh --ctab /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.4.50005_MRI.ctab --annotation aparc.a2009s --segbase 0
+subject = 50005_MRI
+annotation = aparc.a2009s
+hemi = lh
+segfile = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.4.50005_MRI.mgh
+surface   = white
+
+Reading surface 
+ /home/marco/Desktop/SUBJECTS_freeSurfer/50005_MRI/surf/lh.white
+Loading annotations from /home/marco/Desktop/SUBJECTS_freeSurfer/50005_MRI/label/lh.aparc.a2009s.annot
+Seg base 0
+Converting to a segmentation
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50005_MRI --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.4.50005_MRI.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.4.50005_MRI.std.mgh
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50005_MRI --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.4.50005_MRI.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.4.50005_MRI.std.mgh 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50005_MRI
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.4.50005_MRI.mgh
+srctype    = 
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.4.50005_MRI.std.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = lh
+trghemi    = lh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = (null)
+label-trg  = (null)
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50005_MRI/surf/lh.sphere.reg.newtemplate
+Loading source data
+Converting source to float
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/lh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 24661
+nTrg121 = 163842, nTrgMulti =     0, MnTrgMultiHits = 0
+nSrc121 = 80219, nSrcLost = 24661, nSrcMulti = 60529, MnSrcMultiHits = 1.38154
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.4.50005_MRI.std.mgh
+#@# 5/20 50006_MRI sab 25 feb 2017, 23.18.49, CET
+mri_annotation2label --subject 50006_MRI --hemi lh --seg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.5.50006_MRI.mgh --ctab /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.5.50006_MRI.ctab --annotation aparc.a2009s --segbase 0
+subject = 50006_MRI
+annotation = aparc.a2009s
+hemi = lh
+segfile = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.5.50006_MRI.mgh
+surface   = white
+
+Reading surface 
+ /home/marco/Desktop/SUBJECTS_freeSurfer/50006_MRI/surf/lh.white
+Loading annotations from /home/marco/Desktop/SUBJECTS_freeSurfer/50006_MRI/label/lh.aparc.a2009s.annot
+Seg base 0
+Converting to a segmentation
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50006_MRI --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.5.50006_MRI.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.5.50006_MRI.std.mgh
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50006_MRI --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.5.50006_MRI.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.5.50006_MRI.std.mgh 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50006_MRI
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.5.50006_MRI.mgh
+srctype    = 
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.5.50006_MRI.std.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = lh
+trghemi    = lh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = (null)
+label-trg  = (null)
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50006_MRI/surf/lh.sphere.reg.newtemplate
+Loading source data
+Converting source to float
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/lh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 32887
+nTrg121 = 163842, nTrgMulti =     0, MnTrgMultiHits = 0
+nSrc121 = 88138, nSrcLost = 32887, nSrcMulti = 64887, MnSrcMultiHits = 1.16671
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.5.50006_MRI.std.mgh
+#@# 6/20 50007_MRI sab 25 feb 2017, 23.18.55, CET
+mri_annotation2label --subject 50007_MRI --hemi lh --seg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.6.50007_MRI.mgh --ctab /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.6.50007_MRI.ctab --annotation aparc.a2009s --segbase 0
+subject = 50007_MRI
+annotation = aparc.a2009s
+hemi = lh
+segfile = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.6.50007_MRI.mgh
+surface   = white
+
+Reading surface 
+ /home/marco/Desktop/SUBJECTS_freeSurfer/50007_MRI/surf/lh.white
+Loading annotations from /home/marco/Desktop/SUBJECTS_freeSurfer/50007_MRI/label/lh.aparc.a2009s.annot
+Seg base 0
+Converting to a segmentation
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50007_MRI --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.6.50007_MRI.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.6.50007_MRI.std.mgh
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50007_MRI --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.6.50007_MRI.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.6.50007_MRI.std.mgh 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50007_MRI
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.6.50007_MRI.mgh
+srctype    = 
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.6.50007_MRI.std.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = lh
+trghemi    = lh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = (null)
+label-trg  = (null)
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50007_MRI/surf/lh.sphere.reg.newtemplate
+Loading source data
+Converting source to float
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/lh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 49192
+nTrg121 = 163842, nTrgMulti =     0, MnTrgMultiHits = 0
+nSrc121 = 106579, nSrcLost = 49192, nSrcMulti = 74194, MnSrcMultiHits = 0.771801
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.6.50007_MRI.std.mgh
+#@# 7/20 50008_MRI sab 25 feb 2017, 23.19.03, CET
+mri_annotation2label --subject 50008_MRI --hemi lh --seg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.7.50008_MRI.mgh --ctab /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.7.50008_MRI.ctab --annotation aparc.a2009s --segbase 0
+subject = 50008_MRI
+annotation = aparc.a2009s
+hemi = lh
+segfile = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.7.50008_MRI.mgh
+surface   = white
+
+Reading surface 
+ /home/marco/Desktop/SUBJECTS_freeSurfer/50008_MRI/surf/lh.white
+Loading annotations from /home/marco/Desktop/SUBJECTS_freeSurfer/50008_MRI/label/lh.aparc.a2009s.annot
+Seg base 0
+Converting to a segmentation
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50008_MRI --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.7.50008_MRI.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.7.50008_MRI.std.mgh
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50008_MRI --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.7.50008_MRI.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.7.50008_MRI.std.mgh 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50008_MRI
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.7.50008_MRI.mgh
+srctype    = 
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.7.50008_MRI.std.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = lh
+trghemi    = lh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = (null)
+label-trg  = (null)
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50008_MRI/surf/lh.sphere.reg.newtemplate
+Loading source data
+Converting source to float
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/lh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 27963
+nTrg121 = 163842, nTrgMulti =     0, MnTrgMultiHits = 0
+nSrc121 = 84580, nSrcLost = 27963, nSrcMulti = 62136, MnSrcMultiHits = 1.27562
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.7.50008_MRI.std.mgh
+#@# 8/20 50009_MRI sab 25 feb 2017, 23.19.08, CET
+mri_annotation2label --subject 50009_MRI --hemi lh --seg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.8.50009_MRI.mgh --ctab /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.8.50009_MRI.ctab --annotation aparc.a2009s --segbase 0
+subject = 50009_MRI
+annotation = aparc.a2009s
+hemi = lh
+segfile = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.8.50009_MRI.mgh
+surface   = white
+
+Reading surface 
+ /home/marco/Desktop/SUBJECTS_freeSurfer/50009_MRI/surf/lh.white
+Loading annotations from /home/marco/Desktop/SUBJECTS_freeSurfer/50009_MRI/label/lh.aparc.a2009s.annot
+Seg base 0
+Converting to a segmentation
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50009_MRI --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.8.50009_MRI.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.8.50009_MRI.std.mgh
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50009_MRI --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.8.50009_MRI.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.8.50009_MRI.std.mgh 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50009_MRI
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.8.50009_MRI.mgh
+srctype    = 
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.8.50009_MRI.std.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = lh
+trghemi    = lh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = (null)
+label-trg  = (null)
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50009_MRI/surf/lh.sphere.reg.newtemplate
+Loading source data
+Converting source to float
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/lh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 33333
+nTrg121 = 163842, nTrgMulti =     0, MnTrgMultiHits = 0
+nSrc121 = 93480, nSrcLost = 33333, nSrcMulti = 64489, MnSrcMultiHits = 1.09107
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.8.50009_MRI.std.mgh
+#@# 9/20 50010_MRI sab 25 feb 2017, 23.19.15, CET
+mri_annotation2label --subject 50010_MRI --hemi lh --seg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.9.50010_MRI.mgh --ctab /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.9.50010_MRI.ctab --annotation aparc.a2009s --segbase 0
+subject = 50010_MRI
+annotation = aparc.a2009s
+hemi = lh
+segfile = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.9.50010_MRI.mgh
+surface   = white
+
+Reading surface 
+ /home/marco/Desktop/SUBJECTS_freeSurfer/50010_MRI/surf/lh.white
+Loading annotations from /home/marco/Desktop/SUBJECTS_freeSurfer/50010_MRI/label/lh.aparc.a2009s.annot
+Seg base 0
+Converting to a segmentation
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50010_MRI --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.9.50010_MRI.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.9.50010_MRI.std.mgh
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50010_MRI --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.9.50010_MRI.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.9.50010_MRI.std.mgh 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50010_MRI
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.9.50010_MRI.mgh
+srctype    = 
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.9.50010_MRI.std.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = lh
+trghemi    = lh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = (null)
+label-trg  = (null)
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50010_MRI/surf/lh.sphere.reg.newtemplate
+Loading source data
+Converting source to float
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/lh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 8690
+nTrg121 = 163842, nTrgMulti =     0, MnTrgMultiHits = 0
+nSrc121 = 43598, nSrcLost =  8690, nSrcMulti = 56873, MnSrcMultiHits = 2.11425
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.9.50010_MRI.std.mgh
+#@# 10/20 50011_MRI sab 25 feb 2017, 23.19.19, CET
+mri_annotation2label --subject 50011_MRI --hemi lh --seg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.10.50011_MRI.mgh --ctab /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.10.50011_MRI.ctab --annotation aparc.a2009s --segbase 0
+subject = 50011_MRI
+annotation = aparc.a2009s
+hemi = lh
+segfile = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.10.50011_MRI.mgh
+surface   = white
+
+Reading surface 
+ /home/marco/Desktop/SUBJECTS_freeSurfer/50011_MRI/surf/lh.white
+Loading annotations from /home/marco/Desktop/SUBJECTS_freeSurfer/50011_MRI/label/lh.aparc.a2009s.annot
+Seg base 0
+Converting to a segmentation
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50011_MRI --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.10.50011_MRI.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.10.50011_MRI.std.mgh
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50011_MRI --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.10.50011_MRI.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.10.50011_MRI.std.mgh 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50011_MRI
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.10.50011_MRI.mgh
+srctype    = 
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.10.50011_MRI.std.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = lh
+trghemi    = lh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = (null)
+label-trg  = (null)
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50011_MRI/surf/lh.sphere.reg.newtemplate
+Loading source data
+Converting source to float
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/lh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 40567
+nTrg121 = 163842, nTrgMulti =     0, MnTrgMultiHits = 0
+nSrc121 = 100876, nSrcLost = 40567, nSrcMulti = 68449, MnSrcMultiHits = 0.919897
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.10.50011_MRI.std.mgh
+#@# 11/20 50012_MRI sab 25 feb 2017, 23.19.26, CET
+mri_annotation2label --subject 50012_MRI --hemi lh --seg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.11.50012_MRI.mgh --ctab /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.11.50012_MRI.ctab --annotation aparc.a2009s --segbase 0
+subject = 50012_MRI
+annotation = aparc.a2009s
+hemi = lh
+segfile = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.11.50012_MRI.mgh
+surface   = white
+
+Reading surface 
+ /home/marco/Desktop/SUBJECTS_freeSurfer/50012_MRI/surf/lh.white
+Loading annotations from /home/marco/Desktop/SUBJECTS_freeSurfer/50012_MRI/label/lh.aparc.a2009s.annot
+Seg base 0
+Converting to a segmentation
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50012_MRI --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.11.50012_MRI.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.11.50012_MRI.std.mgh
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50012_MRI --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.11.50012_MRI.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.11.50012_MRI.std.mgh 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50012_MRI
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.11.50012_MRI.mgh
+srctype    = 
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.11.50012_MRI.std.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = lh
+trghemi    = lh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = (null)
+label-trg  = (null)
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50012_MRI/surf/lh.sphere.reg.newtemplate
+Loading source data
+Converting source to float
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/lh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 24338
+nTrg121 = 163842, nTrgMulti =     0, MnTrgMultiHits = 0
+nSrc121 = 80241, nSrcLost = 24338, nSrcMulti = 60806, MnSrcMultiHits = 1.37488
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.11.50012_MRI.std.mgh
+#@# 12/20 50013_MRI sab 25 feb 2017, 23.19.31, CET
+mri_annotation2label --subject 50013_MRI --hemi lh --seg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.12.50013_MRI.mgh --ctab /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.12.50013_MRI.ctab --annotation aparc.a2009s --segbase 0
+subject = 50013_MRI
+annotation = aparc.a2009s
+hemi = lh
+segfile = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.12.50013_MRI.mgh
+surface   = white
+
+Reading surface 
+ /home/marco/Desktop/SUBJECTS_freeSurfer/50013_MRI/surf/lh.white
+Loading annotations from /home/marco/Desktop/SUBJECTS_freeSurfer/50013_MRI/label/lh.aparc.a2009s.annot
+Seg base 0
+Converting to a segmentation
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50013_MRI --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.12.50013_MRI.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.12.50013_MRI.std.mgh
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50013_MRI --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.12.50013_MRI.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.12.50013_MRI.std.mgh 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50013_MRI
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.12.50013_MRI.mgh
+srctype    = 
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.12.50013_MRI.std.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = lh
+trghemi    = lh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = (null)
+label-trg  = (null)
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50013_MRI/surf/lh.sphere.reg.newtemplate
+Loading source data
+Converting source to float
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/lh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 20124
+nTrg121 = 163842, nTrgMulti =     0, MnTrgMultiHits = 0
+nSrc121 = 73263, nSrcLost = 20124, nSrcMulti = 58943, MnSrcMultiHits = 1.53672
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.12.50013_MRI.std.mgh
+#@# 13/20 50014 sab 25 feb 2017, 23.19.37, CET
+mri_annotation2label --subject 50014 --hemi lh --seg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.13.50014.mgh --ctab /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.13.50014.ctab --annotation aparc.a2009s --segbase 0
+subject = 50014
+annotation = aparc.a2009s
+hemi = lh
+segfile = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.13.50014.mgh
+surface   = white
+
+Reading surface 
+ /home/marco/Desktop/SUBJECTS_freeSurfer/50014/surf/lh.white
+Loading annotations from /home/marco/Desktop/SUBJECTS_freeSurfer/50014/label/lh.aparc.a2009s.annot
+Seg base 0
+Converting to a segmentation
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50014 --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.13.50014.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.13.50014.std.mgh
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50014 --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.13.50014.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.13.50014.std.mgh 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50014
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.13.50014.mgh
+srctype    = 
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.13.50014.std.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = lh
+trghemi    = lh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = (null)
+label-trg  = (null)
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50014/surf/lh.sphere.reg.newtemplate
+Loading source data
+Converting source to float
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/lh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 27198
+nTrg121 = 163842, nTrgMulti =     0, MnTrgMultiHits = 0
+nSrc121 = 82638, nSrcLost = 27198, nSrcMulti = 62420, MnSrcMultiHits = 1.30093
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.13.50014.std.mgh
+#@# 14/20 50015 sab 25 feb 2017, 23.19.43, CET
+mri_annotation2label --subject 50015 --hemi lh --seg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.14.50015.mgh --ctab /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.14.50015.ctab --annotation aparc.a2009s --segbase 0
+subject = 50015
+annotation = aparc.a2009s
+hemi = lh
+segfile = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.14.50015.mgh
+surface   = white
+
+Reading surface 
+ /home/marco/Desktop/SUBJECTS_freeSurfer/50015/surf/lh.white
+Loading annotations from /home/marco/Desktop/SUBJECTS_freeSurfer/50015/label/lh.aparc.a2009s.annot
+Seg base 0
+Converting to a segmentation
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50015 --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.14.50015.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.14.50015.std.mgh
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50015 --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.14.50015.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.14.50015.std.mgh 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50015
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.14.50015.mgh
+srctype    = 
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.14.50015.std.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = lh
+trghemi    = lh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = (null)
+label-trg  = (null)
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50015/surf/lh.sphere.reg.newtemplate
+Loading source data
+Converting source to float
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/lh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 25804
+nTrg121 = 163842, nTrgMulti =     0, MnTrgMultiHits = 0
+nSrc121 = 82468, nSrcLost = 25804, nSrcMulti = 61484, MnSrcMultiHits = 1.3235
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.14.50015.std.mgh
+#@# 15/20 50016 sab 25 feb 2017, 23.19.48, CET
+mri_annotation2label --subject 50016 --hemi lh --seg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.15.50016.mgh --ctab /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.15.50016.ctab --annotation aparc.a2009s --segbase 0
+subject = 50016
+annotation = aparc.a2009s
+hemi = lh
+segfile = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.15.50016.mgh
+surface   = white
+
+Reading surface 
+ /home/marco/Desktop/SUBJECTS_freeSurfer/50016/surf/lh.white
+Loading annotations from /home/marco/Desktop/SUBJECTS_freeSurfer/50016/label/lh.aparc.a2009s.annot
+Seg base 0
+Converting to a segmentation
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50016 --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.15.50016.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.15.50016.std.mgh
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50016 --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.15.50016.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.15.50016.std.mgh 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50016
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.15.50016.mgh
+srctype    = 
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.15.50016.std.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = lh
+trghemi    = lh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = (null)
+label-trg  = (null)
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50016/surf/lh.sphere.reg.newtemplate
+Loading source data
+Converting source to float
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/lh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 52630
+nTrg121 = 163842, nTrgMulti =     0, MnTrgMultiHits = 0
+nSrc121 = 109606, nSrcLost = 52630, nSrcMulti = 76636, MnSrcMultiHits = 0.707709
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.15.50016.std.mgh
+#@# 16/20 50017 sab 25 feb 2017, 23.19.56, CET
+mri_annotation2label --subject 50017 --hemi lh --seg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.16.50017.mgh --ctab /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.16.50017.ctab --annotation aparc.a2009s --segbase 0
+subject = 50017
+annotation = aparc.a2009s
+hemi = lh
+segfile = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.16.50017.mgh
+surface   = white
+
+Reading surface 
+ /home/marco/Desktop/SUBJECTS_freeSurfer/50017/surf/lh.white
+Loading annotations from /home/marco/Desktop/SUBJECTS_freeSurfer/50017/label/lh.aparc.a2009s.annot
+Seg base 0
+Converting to a segmentation
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50017 --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.16.50017.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.16.50017.std.mgh
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50017 --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.16.50017.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.16.50017.std.mgh 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50017
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.16.50017.mgh
+srctype    = 
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.16.50017.std.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = lh
+trghemi    = lh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = (null)
+label-trg  = (null)
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50017/surf/lh.sphere.reg.newtemplate
+Loading source data
+Converting source to float
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/lh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 31469
+nTrg121 = 163842, nTrgMulti =     0, MnTrgMultiHits = 0
+nSrc121 = 78853, nSrcLost = 31469, nSrcMulti = 66839, MnSrcMultiHits = 1.27155
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.16.50017.std.mgh
+#@# 17/20 50019 sab 25 feb 2017, 23.20.02, CET
+mri_annotation2label --subject 50019 --hemi lh --seg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.17.50019.mgh --ctab /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.17.50019.ctab --annotation aparc.a2009s --segbase 0
+subject = 50019
+annotation = aparc.a2009s
+hemi = lh
+segfile = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.17.50019.mgh
+surface   = white
+
+Reading surface 
+ /home/marco/Desktop/SUBJECTS_freeSurfer/50019/surf/lh.white
+Loading annotations from /home/marco/Desktop/SUBJECTS_freeSurfer/50019/label/lh.aparc.a2009s.annot
+Seg base 0
+Converting to a segmentation
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50019 --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.17.50019.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.17.50019.std.mgh
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50019 --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.17.50019.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.17.50019.std.mgh 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50019
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.17.50019.mgh
+srctype    = 
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.17.50019.std.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = lh
+trghemi    = lh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = (null)
+label-trg  = (null)
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50019/surf/lh.sphere.reg.newtemplate
+Loading source data
+Converting source to float
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/lh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 43606
+nTrg121 = 163842, nTrgMulti =     0, MnTrgMultiHits = 0
+nSrc121 = 101316, nSrcLost = 43606, nSrcMulti = 71202, MnSrcMultiHits = 0.87815
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.17.50019.std.mgh
+#@# 18/20 50020 sab 25 feb 2017, 23.20.08, CET
+mri_annotation2label --subject 50020 --hemi lh --seg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.18.50020.mgh --ctab /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.18.50020.ctab --annotation aparc.a2009s --segbase 0
+subject = 50020
+annotation = aparc.a2009s
+hemi = lh
+segfile = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.18.50020.mgh
+surface   = white
+
+Reading surface 
+ /home/marco/Desktop/SUBJECTS_freeSurfer/50020/surf/lh.white
+Loading annotations from /home/marco/Desktop/SUBJECTS_freeSurfer/50020/label/lh.aparc.a2009s.annot
+Seg base 0
+Converting to a segmentation
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50020 --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.18.50020.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.18.50020.std.mgh
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50020 --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.18.50020.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.18.50020.std.mgh 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50020
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.18.50020.mgh
+srctype    = 
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.18.50020.std.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = lh
+trghemi    = lh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = (null)
+label-trg  = (null)
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50020/surf/lh.sphere.reg.newtemplate
+Loading source data
+Converting source to float
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/lh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 32082
+nTrg121 = 163842, nTrgMulti =     0, MnTrgMultiHits = 0
+nSrc121 = 89497, nSrcLost = 32082, nSrcMulti = 64684, MnSrcMultiHits = 1.14936
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.18.50020.std.mgh
+#@# 19/20 50022 sab 25 feb 2017, 23.20.14, CET
+mri_annotation2label --subject 50022 --hemi lh --seg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.19.50022.mgh --ctab /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.19.50022.ctab --annotation aparc.a2009s --segbase 0
+subject = 50022
+annotation = aparc.a2009s
+hemi = lh
+segfile = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.19.50022.mgh
+surface   = white
+
+Reading surface 
+ /home/marco/Desktop/SUBJECTS_freeSurfer/50022/surf/lh.white
+Loading annotations from /home/marco/Desktop/SUBJECTS_freeSurfer/50022/label/lh.aparc.a2009s.annot
+Seg base 0
+Converting to a segmentation
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50022 --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.19.50022.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.19.50022.std.mgh
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50022 --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.19.50022.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.19.50022.std.mgh 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50022
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.19.50022.mgh
+srctype    = 
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.19.50022.std.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = lh
+trghemi    = lh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = (null)
+label-trg  = (null)
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50022/surf/lh.sphere.reg.newtemplate
+Loading source data
+Converting source to float
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/lh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 30991
+nTrg121 = 163842, nTrgMulti =     0, MnTrgMultiHits = 0
+nSrc121 = 90975, nSrcLost = 30991, nSrcMulti = 62849, MnSrcMultiHits = 1.1594
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.19.50022.std.mgh
+#@# 20/20 50023 sab 25 feb 2017, 23.20.20, CET
+mri_annotation2label --subject 50023 --hemi lh --seg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.20.50023.mgh --ctab /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.20.50023.ctab --annotation aparc.a2009s --segbase 0
+subject = 50023
+annotation = aparc.a2009s
+hemi = lh
+segfile = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.20.50023.mgh
+surface   = white
+
+Reading surface 
+ /home/marco/Desktop/SUBJECTS_freeSurfer/50023/surf/lh.white
+Loading annotations from /home/marco/Desktop/SUBJECTS_freeSurfer/50023/label/lh.aparc.a2009s.annot
+Seg base 0
+Converting to a segmentation
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50023 --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.20.50023.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.20.50023.std.mgh
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --mapmethod nnf --hemi lh --srcsubject 50023 --srcsurfreg sphere.reg.newtemplate --sval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.20.50023.mgh --trgsubject FINAL_TEMPLATE --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.20.50023.std.mgh 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50023
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.20.50023.mgh
+srctype    = 
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.20.50023.std.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = lh
+trghemi    = lh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = (null)
+label-trg  = (null)
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50023/surf/lh.sphere.reg.newtemplate
+Loading source data
+Converting source to float
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/lh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 28838
+nTrg121 = 163842, nTrgMulti =     0, MnTrgMultiHits = 0
+nSrc121 = 86001, nSrcLost = 28838, nSrcMulti = 62590, MnSrcMultiHits = 1.24367
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.20.50023.std.mgh
+mri_concat /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.1.50002_recon.std.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.2.50003_MRI.std.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.3.50004_MRI.std.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.4.50005_MRI.std.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.5.50006_MRI.std.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.6.50007_MRI.std.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.7.50008_MRI.std.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.8.50009_MRI.std.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.9.50010_MRI.std.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.10.50011_MRI.std.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.11.50012_MRI.std.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.12.50013_MRI.std.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.13.50014.std.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.14.50015.std.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.15.50016.std.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.16.50017.std.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.17.50019.std.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.18.50020.std.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.19.50022.std.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.20.50023.std.mgh --vote --o /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.vote.mgh
+ninputs = 20
+Checking inputs
+nframestot = 20
+Allocing output
+Done allocing
+nframes = 20
+Voting 
+MRIvote: sorting
+MRIvote: done sorting
+Writing to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.vote.mgh
+mri_convert --frame 1 /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.vote.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/lh.aparc.a2009s.annot.p.mgh
+mri_convert.bin --frame 1 /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.vote.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/lh.aparc.a2009s.annot.p.mgh 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.vote.mgh...
+TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 0, 0)
+j_ras = (0, 0, -1)
+k_ras = (0, 1, 0)
+keeping frame 1
+writing to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/lh.aparc.a2009s.annot.p.mgh...
+mris_seg2annot --seg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.vote.mgh --ctab /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.1.50002_recon.ctab --s FINAL_TEMPLATE --hemi lh --o /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/lh.aparc.a2009s.annot
+
+$Id: mris_seg2annot.c,v 1.10 2014/11/15 00:07:19 greve Exp $
+cwd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+cmdline mris_seg2annot --seg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.vote.mgh --ctab /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.1.50002_recon.ctab --s FINAL_TEMPLATE --hemi lh --o /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/lh.aparc.a2009s.annot 
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+subject   FINAL_TEMPLATE
+hemi      lh
+surfseg   /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.vote.mgh
+ctab      /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.1.50002_recon.ctab
+annotfile /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/lh.aparc.a2009s.annot
+Reading surface seg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.vote.mgh
+Reading surface /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/lh.white
+Reading ctab /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/tmpdir.annot2std.13093/seg.1.50002_recon.ctab
+Writing annot to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/label/lh.aparc.a2009s.annot
+ 
+Started at sab 25 feb 2017, 23.18.26, CET 
+Ended   at sab 25 feb 2017, 23.20.28, CET
+Annot2std-Run-Time-Sec 122
+ 
+annot2std Done

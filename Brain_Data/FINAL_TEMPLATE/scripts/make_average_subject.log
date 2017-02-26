@@ -1,0 +1,11 @@
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+/usr/local/freesurfer/bin/make_average_subject --out FINAL_TEMPLATE --surf-reg sphere.reg.newtemplate --subjects 50002_recon 50003_MRI 50004_MRI 50005_MRI 50006_MRI 50007_MRI 50008_MRI 50009_MRI 50010_MRI 50011_MRI 50012_MRI 50013_MRI 50014 50015 50016 50017 50019 50020 50022 50023 --no-vol
+
+$Id: make_average_subject,v 1.23.2.1 2016/08/02 21:20:04 greve Exp $
+sab 25 feb 2017, 23.10.16, CET
+/home/marco/Desktop/SUBJECTS_freeSurfer
+output ddir is /home/marco/Desktop/SUBJECTS_freeSurfer
+uid=1000(marco) gid=1000(marco) gruppi=1000(marco),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),113(lpadmin),128(sambashare)
+dom 26 feb 2017, 00.03.46, CET
+make_average_subject done

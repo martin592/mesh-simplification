@@ -1,0 +1,1232 @@
+sab 25 feb 2017, 23.50.38, CET
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+/usr/local/freesurfer/bin/mris_preproc --out /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/stack.rh.thickness.mgh --f /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/list.subjects.txt --target FINAL_TEMPLATE --hemi rh --meas thickness --srcsurfreg sphere.reg.newtemplate --log /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/scripts/mris_preproc.rh.thickness.log
+
+Linux marco-Lenovo-Yoga-2-Pro 4.4.0-64-generic #85-Ubuntu SMP Mon Feb 20 11:50:30 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
+$Id: mris_preproc,v 1.76.2.1 2016/08/12 17:55:45 zkaufman Exp $
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.0-2beb96c
+tmpdir is /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441
+Src rh sphere.reg.newtemplate
+Trg rh sphere.reg
+
+
+
+
+---------------------------------------------------
+#@# 1/20 50002_recon sab 25 feb 2017, 23.50.38, CET --------------
+-----------------------
+mri_surf2surf --srcsubject 50002_recon --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50002_recon.1.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50002_recon/surf/rh.thickness --sfmt curv --noreshape --cortex
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --srcsubject 50002_recon --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50002_recon.1.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50002_recon/surf/rh.thickness --sfmt curv --noreshape --cortex 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50002_recon
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/50002_recon/surf/rh.thickness
+srctype    = curv
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50002_recon.1.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = rh
+trghemi    = rh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = rh.cortex.label
+label-trg  = rh.cortex.label
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50002_recon/surf/rh.sphere.reg.newtemplate
+Loading source data
+Reading curvature file /home/marco/Desktop/SUBJECTS_freeSurfer/50002_recon/surf/rh.thickness
+Reading source subject label mask rh.cortex.label
+masking the input
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/rh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+surf2surf_nnfr: building target hash (res=16).
+Surf2Surf: Reverse Loop (158050)
+Reverse Loop had 34453 hits
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 0
+nTrg121 = 137673, nTrgMulti = 26169, MnTrgMultiHits = 2.31656
+nSrc121 = 126702, nSrcLost =     0, nSrcMulti = 31348, MnSrcMultiHits = 2.28381
+Reading target space mask label rh.cortex.label
+masking the input
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50002_recon.1.mgh
+
+
+
+---------------------------------------------------
+#@# 2/20 50003_MRI sab 25 feb 2017, 23.50.44, CET --------------
+-----------------------
+mri_surf2surf --srcsubject 50003_MRI --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50003_MRI.2.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50003_MRI/surf/rh.thickness --sfmt curv --noreshape --cortex
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --srcsubject 50003_MRI --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50003_MRI.2.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50003_MRI/surf/rh.thickness --sfmt curv --noreshape --cortex 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50003_MRI
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/50003_MRI/surf/rh.thickness
+srctype    = curv
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50003_MRI.2.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = rh
+trghemi    = rh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = rh.cortex.label
+label-trg  = rh.cortex.label
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50003_MRI/surf/rh.sphere.reg.newtemplate
+Loading source data
+Reading curvature file /home/marco/Desktop/SUBJECTS_freeSurfer/50003_MRI/surf/rh.thickness
+Reading source subject label mask rh.cortex.label
+masking the input
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/rh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+surf2surf_nnfr: building target hash (res=16).
+Surf2Surf: Reverse Loop (149875)
+Reverse Loop had 30121 hits
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 0
+nTrg121 = 141482, nTrgMulti = 22360, MnTrgMultiHits = 2.34709
+nSrc121 = 116442, nSrcLost =     0, nSrcMulti = 33433, MnSrcMultiHits = 2.3187
+Reading target space mask label rh.cortex.label
+masking the input
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50003_MRI.2.mgh
+
+
+
+---------------------------------------------------
+#@# 3/20 50004_MRI sab 25 feb 2017, 23.50.49, CET --------------
+-----------------------
+mri_surf2surf --srcsubject 50004_MRI --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50004_MRI.3.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50004_MRI/surf/rh.thickness --sfmt curv --noreshape --cortex
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --srcsubject 50004_MRI --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50004_MRI.3.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50004_MRI/surf/rh.thickness --sfmt curv --noreshape --cortex 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50004_MRI
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/50004_MRI/surf/rh.thickness
+srctype    = curv
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50004_MRI.3.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = rh
+trghemi    = rh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = rh.cortex.label
+label-trg  = rh.cortex.label
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50004_MRI/surf/rh.sphere.reg.newtemplate
+Loading source data
+Reading curvature file /home/marco/Desktop/SUBJECTS_freeSurfer/50004_MRI/surf/rh.thickness
+Reading source subject label mask rh.cortex.label
+masking the input
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/rh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+surf2surf_nnfr: building target hash (res=16).
+Surf2Surf: Reverse Loop (149638)
+Reverse Loop had 29624 hits
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 0
+nTrg121 = 141163, nTrgMulti = 22679, MnTrgMultiHits = 2.30623
+nSrc121 = 116512, nSrcLost =     0, nSrcMulti = 33126, MnSrcMultiHits = 2.32307
+Reading target space mask label rh.cortex.label
+masking the input
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50004_MRI.3.mgh
+
+
+
+---------------------------------------------------
+#@# 4/20 50005_MRI sab 25 feb 2017, 23.50.55, CET --------------
+-----------------------
+mri_surf2surf --srcsubject 50005_MRI --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50005_MRI.4.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50005_MRI/surf/rh.thickness --sfmt curv --noreshape --cortex
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --srcsubject 50005_MRI --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50005_MRI.4.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50005_MRI/surf/rh.thickness --sfmt curv --noreshape --cortex 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50005_MRI
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/50005_MRI/surf/rh.thickness
+srctype    = curv
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50005_MRI.4.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = rh
+trghemi    = rh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = rh.cortex.label
+label-trg  = rh.cortex.label
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50005_MRI/surf/rh.sphere.reg.newtemplate
+Loading source data
+Reading curvature file /home/marco/Desktop/SUBJECTS_freeSurfer/50005_MRI/surf/rh.thickness
+Reading source subject label mask rh.cortex.label
+masking the input
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/rh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+surf2surf_nnfr: building target hash (res=16).
+Surf2Surf: Reverse Loop (139049)
+Reverse Loop had 23777 hits
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 0
+nTrg121 = 145253, nTrgMulti = 18589, MnTrgMultiHits = 2.27909
+nSrc121 = 103231, nSrcLost =     0, nSrcMulti = 35818, MnSrcMultiHits = 2.35602
+Reading target space mask label rh.cortex.label
+masking the input
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50005_MRI.4.mgh
+
+
+
+---------------------------------------------------
+#@# 5/20 50006_MRI sab 25 feb 2017, 23.51.02, CET --------------
+-----------------------
+mri_surf2surf --srcsubject 50006_MRI --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50006_MRI.5.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50006_MRI/surf/rh.thickness --sfmt curv --noreshape --cortex
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --srcsubject 50006_MRI --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50006_MRI.5.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50006_MRI/surf/rh.thickness --sfmt curv --noreshape --cortex 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50006_MRI
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/50006_MRI/surf/rh.thickness
+srctype    = curv
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50006_MRI.5.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = rh
+trghemi    = rh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = rh.cortex.label
+label-trg  = rh.cortex.label
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50006_MRI/surf/rh.sphere.reg.newtemplate
+Loading source data
+Reading curvature file /home/marco/Desktop/SUBJECTS_freeSurfer/50006_MRI/surf/rh.thickness
+Reading source subject label mask rh.cortex.label
+masking the input
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/rh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+surf2surf_nnfr: building target hash (res=16).
+Surf2Surf: Reverse Loop (152724)
+Reverse Loop had 32062 hits
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 0
+nTrg121 = 139273, nTrgMulti = 24569, MnTrgMultiHits = 2.30498
+nSrc121 = 120179, nSrcLost =     0, nSrcMulti = 32545, MnSrcMultiHits = 2.32678
+Reading target space mask label rh.cortex.label
+masking the input
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50006_MRI.5.mgh
+
+
+
+---------------------------------------------------
+#@# 6/20 50007_MRI sab 25 feb 2017, 23.51.11, CET --------------
+-----------------------
+mri_surf2surf --srcsubject 50007_MRI --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50007_MRI.6.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50007_MRI/surf/rh.thickness --sfmt curv --noreshape --cortex
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --srcsubject 50007_MRI --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50007_MRI.6.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50007_MRI/surf/rh.thickness --sfmt curv --noreshape --cortex 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50007_MRI
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/50007_MRI/surf/rh.thickness
+srctype    = curv
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50007_MRI.6.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = rh
+trghemi    = rh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = rh.cortex.label
+label-trg  = rh.cortex.label
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50007_MRI/surf/rh.sphere.reg.newtemplate
+Loading source data
+Reading curvature file /home/marco/Desktop/SUBJECTS_freeSurfer/50007_MRI/surf/rh.thickness
+Reading source subject label mask rh.cortex.label
+masking the input
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/rh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+surf2surf_nnfr: building target hash (res=16).
+Surf2Surf: Reverse Loop (182467)
+Reverse Loop had 50404 hits
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 0
+nTrg121 = 126342, nTrgMulti = 37500, MnTrgMultiHits = 2.34411
+nSrc121 = 158074, nSrcLost =     0, nSrcMulti = 24393, MnSrcMultiHits = 2.30279
+Reading target space mask label rh.cortex.label
+masking the input
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50007_MRI.6.mgh
+
+
+
+---------------------------------------------------
+#@# 7/20 50008_MRI sab 25 feb 2017, 23.51.21, CET --------------
+-----------------------
+mri_surf2surf --srcsubject 50008_MRI --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50008_MRI.7.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50008_MRI/surf/rh.thickness --sfmt curv --noreshape --cortex
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --srcsubject 50008_MRI --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50008_MRI.7.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50008_MRI/surf/rh.thickness --sfmt curv --noreshape --cortex 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50008_MRI
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/50008_MRI/surf/rh.thickness
+srctype    = curv
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50008_MRI.7.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = rh
+trghemi    = rh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = rh.cortex.label
+label-trg  = rh.cortex.label
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50008_MRI/surf/rh.sphere.reg.newtemplate
+Loading source data
+Reading curvature file /home/marco/Desktop/SUBJECTS_freeSurfer/50008_MRI/surf/rh.thickness
+Reading source subject label mask rh.cortex.label
+masking the input
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/rh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+surf2surf_nnfr: building target hash (res=16).
+Surf2Surf: Reverse Loop (146577)
+Reverse Loop had 27805 hits
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 0
+nTrg121 = 142201, nTrgMulti = 21641, MnTrgMultiHits = 2.28483
+nSrc121 = 112516, nSrcLost =     0, nSrcMulti = 34061, MnSrcMultiHits = 2.32321
+Reading target space mask label rh.cortex.label
+masking the input
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50008_MRI.7.mgh
+
+
+
+---------------------------------------------------
+#@# 8/20 50009_MRI sab 25 feb 2017, 23.51.28, CET --------------
+-----------------------
+mri_surf2surf --srcsubject 50009_MRI --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50009_MRI.8.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50009_MRI/surf/rh.thickness --sfmt curv --noreshape --cortex
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --srcsubject 50009_MRI --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50009_MRI.8.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50009_MRI/surf/rh.thickness --sfmt curv --noreshape --cortex 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50009_MRI
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/50009_MRI/surf/rh.thickness
+srctype    = curv
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50009_MRI.8.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = rh
+trghemi    = rh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = rh.cortex.label
+label-trg  = rh.cortex.label
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50009_MRI/surf/rh.sphere.reg.newtemplate
+Loading source data
+Reading curvature file /home/marco/Desktop/SUBJECTS_freeSurfer/50009_MRI/surf/rh.thickness
+Reading source subject label mask rh.cortex.label
+masking the input
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/rh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+surf2surf_nnfr: building target hash (res=16).
+Surf2Surf: Reverse Loop (159218)
+Reverse Loop had 33947 hits
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 0
+nTrg121 = 138006, nTrgMulti = 25836, MnTrgMultiHits = 2.31394
+nSrc121 = 128638, nSrcLost =     0, nSrcMulti = 30580, MnSrcMultiHits = 2.26131
+Reading target space mask label rh.cortex.label
+masking the input
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50009_MRI.8.mgh
+
+
+
+---------------------------------------------------
+#@# 9/20 50010_MRI sab 25 feb 2017, 23.51.34, CET --------------
+-----------------------
+mri_surf2surf --srcsubject 50010_MRI --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50010_MRI.9.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50010_MRI/surf/rh.thickness --sfmt curv --noreshape --cortex
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --srcsubject 50010_MRI --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50010_MRI.9.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50010_MRI/surf/rh.thickness --sfmt curv --noreshape --cortex 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50010_MRI
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/50010_MRI/surf/rh.thickness
+srctype    = curv
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50010_MRI.9.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = rh
+trghemi    = rh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = rh.cortex.label
+label-trg  = rh.cortex.label
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50010_MRI/surf/rh.sphere.reg.newtemplate
+Loading source data
+Reading curvature file /home/marco/Desktop/SUBJECTS_freeSurfer/50010_MRI/surf/rh.thickness
+Reading source subject label mask rh.cortex.label
+masking the input
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/rh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+surf2surf_nnfr: building target hash (res=16).
+Surf2Surf: Reverse Loop (101935)
+Reverse Loop had 8964 hits
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 0
+nTrg121 = 156751, nTrgMulti =  7091, MnTrgMultiHits = 2.26414
+nSrc121 = 54284, nSrcLost =     0, nSrcMulti = 47651, MnSrcMultiHits = 2.48729
+Reading target space mask label rh.cortex.label
+masking the input
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50010_MRI.9.mgh
+
+
+
+---------------------------------------------------
+#@# 10/20 50011_MRI sab 25 feb 2017, 23.51.38, CET --------------
+-----------------------
+mri_surf2surf --srcsubject 50011_MRI --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50011_MRI.10.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50011_MRI/surf/rh.thickness --sfmt curv --noreshape --cortex
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --srcsubject 50011_MRI --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50011_MRI.10.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50011_MRI/surf/rh.thickness --sfmt curv --noreshape --cortex 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50011_MRI
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/50011_MRI/surf/rh.thickness
+srctype    = curv
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50011_MRI.10.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = rh
+trghemi    = rh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = rh.cortex.label
+label-trg  = rh.cortex.label
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50011_MRI/surf/rh.sphere.reg.newtemplate
+Loading source data
+Reading curvature file /home/marco/Desktop/SUBJECTS_freeSurfer/50011_MRI/surf/rh.thickness
+Reading source subject label mask rh.cortex.label
+masking the input
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/rh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+surf2surf_nnfr: building target hash (res=16).
+Surf2Surf: Reverse Loop (173916)
+Reverse Loop had 43104 hits
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 0
+nTrg121 = 131061, nTrgMulti = 32781, MnTrgMultiHits = 2.31491
+nSrc121 = 147608, nSrcLost =     0, nSrcMulti = 26308, MnSrcMultiHits = 2.25551
+Reading target space mask label rh.cortex.label
+masking the input
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50011_MRI.10.mgh
+
+
+
+---------------------------------------------------
+#@# 11/20 50012_MRI sab 25 feb 2017, 23.51.47, CET --------------
+-----------------------
+mri_surf2surf --srcsubject 50012_MRI --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50012_MRI.11.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50012_MRI/surf/rh.thickness --sfmt curv --noreshape --cortex
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --srcsubject 50012_MRI --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50012_MRI.11.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50012_MRI/surf/rh.thickness --sfmt curv --noreshape --cortex 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50012_MRI
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/50012_MRI/surf/rh.thickness
+srctype    = curv
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50012_MRI.11.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = rh
+trghemi    = rh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = rh.cortex.label
+label-trg  = rh.cortex.label
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50012_MRI/surf/rh.sphere.reg.newtemplate
+Loading source data
+Reading curvature file /home/marco/Desktop/SUBJECTS_freeSurfer/50012_MRI/surf/rh.thickness
+Reading source subject label mask rh.cortex.label
+masking the input
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/rh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+surf2surf_nnfr: building target hash (res=16).
+Surf2Surf: Reverse Loop (139838)
+Reverse Loop had 23181 hits
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 0
+nTrg121 = 145555, nTrgMulti = 18287, MnTrgMultiHits = 2.26762
+nSrc121 = 103509, nSrcLost =     0, nSrcMulti = 36329, MnSrcMultiHits = 2.29882
+Reading target space mask label rh.cortex.label
+masking the input
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50012_MRI.11.mgh
+
+
+
+---------------------------------------------------
+#@# 12/20 50013_MRI sab 25 feb 2017, 23.51.55, CET --------------
+-----------------------
+mri_surf2surf --srcsubject 50013_MRI --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50013_MRI.12.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50013_MRI/surf/rh.thickness --sfmt curv --noreshape --cortex
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --srcsubject 50013_MRI --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50013_MRI.12.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50013_MRI/surf/rh.thickness --sfmt curv --noreshape --cortex 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50013_MRI
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/50013_MRI/surf/rh.thickness
+srctype    = curv
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50013_MRI.12.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = rh
+trghemi    = rh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = rh.cortex.label
+label-trg  = rh.cortex.label
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50013_MRI/surf/rh.sphere.reg.newtemplate
+Loading source data
+Reading curvature file /home/marco/Desktop/SUBJECTS_freeSurfer/50013_MRI/surf/rh.thickness
+Reading source subject label mask rh.cortex.label
+masking the input
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/rh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+surf2surf_nnfr: building target hash (res=16).
+Surf2Surf: Reverse Loop (132395)
+Reverse Loop had 20249 hits
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 0
+nTrg121 = 148190, nTrgMulti = 15652, MnTrgMultiHits = 2.2937
+nSrc121 = 93582, nSrcLost =     0, nSrcMulti = 38813, MnSrcMultiHits = 2.33192
+Reading target space mask label rh.cortex.label
+masking the input
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50013_MRI.12.mgh
+
+
+
+---------------------------------------------------
+#@# 13/20 50014 sab 25 feb 2017, 23.52.02, CET --------------
+-----------------------
+mri_surf2surf --srcsubject 50014 --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50014.13.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50014/surf/rh.thickness --sfmt curv --noreshape --cortex
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --srcsubject 50014 --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50014.13.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50014/surf/rh.thickness --sfmt curv --noreshape --cortex 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50014
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/50014/surf/rh.thickness
+srctype    = curv
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50014.13.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = rh
+trghemi    = rh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = rh.cortex.label
+label-trg  = rh.cortex.label
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50014/surf/rh.sphere.reg.newtemplate
+Loading source data
+Reading curvature file /home/marco/Desktop/SUBJECTS_freeSurfer/50014/surf/rh.thickness
+Reading source subject label mask rh.cortex.label
+masking the input
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/rh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+surf2surf_nnfr: building target hash (res=16).
+Surf2Surf: Reverse Loop (145555)
+Reverse Loop had 27804 hits
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 0
+nTrg121 = 143000, nTrgMulti = 20842, MnTrgMultiHits = 2.33404
+nSrc121 = 110169, nSrcLost =     0, nSrcMulti = 35386, MnSrcMultiHits = 2.30252
+Reading target space mask label rh.cortex.label
+masking the input
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50014.13.mgh
+
+
+
+---------------------------------------------------
+#@# 14/20 50015 sab 25 feb 2017, 23.52.08, CET --------------
+-----------------------
+mri_surf2surf --srcsubject 50015 --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50015.14.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50015/surf/rh.thickness --sfmt curv --noreshape --cortex
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --srcsubject 50015 --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50015.14.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50015/surf/rh.thickness --sfmt curv --noreshape --cortex 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50015
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/50015/surf/rh.thickness
+srctype    = curv
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50015.14.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = rh
+trghemi    = rh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = rh.cortex.label
+label-trg  = rh.cortex.label
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50015/surf/rh.sphere.reg.newtemplate
+Loading source data
+Reading curvature file /home/marco/Desktop/SUBJECTS_freeSurfer/50015/surf/rh.thickness
+Reading source subject label mask rh.cortex.label
+masking the input
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/rh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+surf2surf_nnfr: building target hash (res=16).
+Surf2Surf: Reverse Loop (145128)
+Reverse Loop had 26332 hits
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 0
+nTrg121 = 143597, nTrgMulti = 20245, MnTrgMultiHits = 2.30067
+nSrc121 = 110079, nSrcLost =     0, nSrcMulti = 35049, MnSrcMultiHits = 2.28523
+Reading target space mask label rh.cortex.label
+masking the input
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50015.14.mgh
+
+
+
+---------------------------------------------------
+#@# 15/20 50016 sab 25 feb 2017, 23.52.16, CET --------------
+-----------------------
+mri_surf2surf --srcsubject 50016 --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50016.15.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50016/surf/rh.thickness --sfmt curv --noreshape --cortex
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --srcsubject 50016 --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50016.15.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50016/surf/rh.thickness --sfmt curv --noreshape --cortex 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50016
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/50016/surf/rh.thickness
+srctype    = curv
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50016.15.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = rh
+trghemi    = rh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = rh.cortex.label
+label-trg  = rh.cortex.label
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50016/surf/rh.sphere.reg.newtemplate
+Loading source data
+Reading curvature file /home/marco/Desktop/SUBJECTS_freeSurfer/50016/surf/rh.thickness
+Reading source subject label mask rh.cortex.label
+masking the input
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/rh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+surf2surf_nnfr: building target hash (res=16).
+Surf2Surf: Reverse Loop (188581)
+Reverse Loop had 53506 hits
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 0
+nTrg121 = 123524, nTrgMulti = 40318, MnTrgMultiHits = 2.3271
+nSrc121 = 166305, nSrcLost =     0, nSrcMulti = 22276, MnSrcMultiHits = 2.29139
+Reading target space mask label rh.cortex.label
+masking the input
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50016.15.mgh
+
+
+
+---------------------------------------------------
+#@# 16/20 50017 sab 25 feb 2017, 23.52.24, CET --------------
+-----------------------
+mri_surf2surf --srcsubject 50017 --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50017.16.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50017/surf/rh.thickness --sfmt curv --noreshape --cortex
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --srcsubject 50017 --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50017.16.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50017/surf/rh.thickness --sfmt curv --noreshape --cortex 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50017
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/50017/surf/rh.thickness
+srctype    = curv
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50017.16.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = rh
+trghemi    = rh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = rh.cortex.label
+label-trg  = rh.cortex.label
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50017/surf/rh.sphere.reg.newtemplate
+Loading source data
+Reading curvature file /home/marco/Desktop/SUBJECTS_freeSurfer/50017/surf/rh.thickness
+Reading source subject label mask rh.cortex.label
+masking the input
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/rh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+surf2surf_nnfr: building target hash (res=16).
+Surf2Surf: Reverse Loop (145580)
+Reverse Loop had 31124 hits
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 0
+nTrg121 = 141801, nTrgMulti = 22041, MnTrgMultiHits = 2.4121
+nSrc121 = 110448, nSrcLost =     0, nSrcMulti = 35132, MnSrcMultiHits = 2.40573
+Reading target space mask label rh.cortex.label
+masking the input
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50017.16.mgh
+
+
+
+---------------------------------------------------
+#@# 17/20 50019 sab 25 feb 2017, 23.52.31, CET --------------
+-----------------------
+mri_surf2surf --srcsubject 50019 --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50019.17.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50019/surf/rh.thickness --sfmt curv --noreshape --cortex
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --srcsubject 50019 --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50019.17.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50019/surf/rh.thickness --sfmt curv --noreshape --cortex 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50019
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/50019/surf/rh.thickness
+srctype    = curv
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50019.17.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = rh
+trghemi    = rh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = rh.cortex.label
+label-trg  = rh.cortex.label
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50019/surf/rh.sphere.reg.newtemplate
+Loading source data
+Reading curvature file /home/marco/Desktop/SUBJECTS_freeSurfer/50019/surf/rh.thickness
+Reading source subject label mask rh.cortex.label
+masking the input
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/rh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+surf2surf_nnfr: building target hash (res=16).
+Surf2Surf: Reverse Loop (178660)
+Reverse Loop had 47454 hits
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 0
+nTrg121 = 128566, nTrgMulti = 35276, MnTrgMultiHits = 2.34522
+nSrc121 = 152758, nSrcLost =     0, nSrcMulti = 25902, MnSrcMultiHits = 2.25998
+Reading target space mask label rh.cortex.label
+masking the input
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50019.17.mgh
+
+
+
+---------------------------------------------------
+#@# 18/20 50020 sab 25 feb 2017, 23.52.40, CET --------------
+-----------------------
+mri_surf2surf --srcsubject 50020 --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50020.18.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50020/surf/rh.thickness --sfmt curv --noreshape --cortex
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --srcsubject 50020 --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50020.18.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50020/surf/rh.thickness --sfmt curv --noreshape --cortex 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50020
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/50020/surf/rh.thickness
+srctype    = curv
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50020.18.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = rh
+trghemi    = rh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = rh.cortex.label
+label-trg  = rh.cortex.label
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50020/surf/rh.sphere.reg.newtemplate
+Loading source data
+Reading curvature file /home/marco/Desktop/SUBJECTS_freeSurfer/50020/surf/rh.thickness
+Reading source subject label mask rh.cortex.label
+masking the input
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/rh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+surf2surf_nnfr: building target hash (res=16).
+Surf2Surf: Reverse Loop (155092)
+Reverse Loop had 35586 hits
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 0
+nTrg121 = 138586, nTrgMulti = 25256, MnTrgMultiHits = 2.40901
+nSrc121 = 121987, nSrcLost =     0, nSrcMulti = 33105, MnSrcMultiHits = 2.33925
+Reading target space mask label rh.cortex.label
+masking the input
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50020.18.mgh
+
+
+
+---------------------------------------------------
+#@# 19/20 50022 sab 25 feb 2017, 23.52.48, CET --------------
+-----------------------
+mri_surf2surf --srcsubject 50022 --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50022.19.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50022/surf/rh.thickness --sfmt curv --noreshape --cortex
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --srcsubject 50022 --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50022.19.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50022/surf/rh.thickness --sfmt curv --noreshape --cortex 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50022
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/50022/surf/rh.thickness
+srctype    = curv
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50022.19.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = rh
+trghemi    = rh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = rh.cortex.label
+label-trg  = rh.cortex.label
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50022/surf/rh.sphere.reg.newtemplate
+Loading source data
+Reading curvature file /home/marco/Desktop/SUBJECTS_freeSurfer/50022/surf/rh.thickness
+Reading source subject label mask rh.cortex.label
+masking the input
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/rh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+surf2surf_nnfr: building target hash (res=16).
+Surf2Surf: Reverse Loop (153543)
+Reverse Loop had 32278 hits
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 0
+nTrg121 = 139713, nTrgMulti = 24129, MnTrgMultiHits = 2.33773
+nSrc121 = 120601, nSrcLost =     0, nSrcMulti = 32942, MnSrcMultiHits = 2.29248
+Reading target space mask label rh.cortex.label
+masking the input
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50022.19.mgh
+
+
+
+---------------------------------------------------
+#@# 20/20 50023 sab 25 feb 2017, 23.52.57, CET --------------
+-----------------------
+mri_surf2surf --srcsubject 50023 --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50023.20.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50023/surf/rh.thickness --sfmt curv --noreshape --cortex
+Source registration surface changed to sphere.reg.newtemplate
+Target registration surface changed to sphere.reg
+
+$Id: mri_surf2surf.c,v 1.103 2015/11/05 22:07:33 greve Exp $
+
+setenv SUBJECTS_DIR /home/marco/Desktop/SUBJECTS_freeSurfer
+cd /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE
+mri_surf2surf --srcsubject 50023 --srchemi rh --srcsurfreg sphere.reg.newtemplate --trgsubject FINAL_TEMPLATE --trghemi rh --trgsurfreg sphere.reg --tval /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50023.20.mgh --sval /home/marco/Desktop/SUBJECTS_freeSurfer/50023/surf/rh.thickness --sfmt curv --noreshape --cortex 
+
+sysname  Linux
+hostname marco-Lenovo-Yoga-2-Pro
+machine  x86_64
+user     marco
+srcsubject = 50023
+srcval     = /home/marco/Desktop/SUBJECTS_freeSurfer/50023/surf/rh.thickness
+srctype    = curv
+trgsubject = FINAL_TEMPLATE
+trgval     = /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50023.20.mgh
+trgtype    = 
+srcsurfreg = sphere.reg.newtemplate
+trgsurfreg = sphere.reg
+srchemi    = rh
+trghemi    = rh
+frame      = 0
+fwhm-in    = 0
+fwhm-out   = 0
+label-src  = rh.cortex.label
+label-trg  = rh.cortex.label
+OKToRevFaceOrder  = 1
+UseDualHemi = 0
+Reading source surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/50023/surf/rh.sphere.reg.newtemplate
+Loading source data
+Reading curvature file /home/marco/Desktop/SUBJECTS_freeSurfer/50023/surf/rh.thickness
+Reading source subject label mask rh.cortex.label
+masking the input
+Reading target surface reg /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/rh.sphere.reg
+Done
+Using surf2surf_nnfr()
+Mapping Source Volume onto Source Subject Surface
+surf2surf_nnfr: building source hash (res=16).
+Surf2Surf: Forward Loop (163842)
+
+surf2surf_nnfr: building target hash (res=16).
+Surf2Surf: Reverse Loop (149777)
+Reverse Loop had 28625 hits
+Surf2Surf: Dividing by number of hits (163842)
+INFO: nSrcLost = 0
+nTrg121 = 141691, nTrgMulti = 22151, MnTrgMultiHits = 2.29227
+nSrc121 = 116108, nSrcLost =     0, nSrcMulti = 33669, MnSrcMultiHits = 2.26793
+Reading target space mask label rh.cortex.label
+masking the input
+Saving target data
+Saving to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50023.20.mgh
+
+
+
+-----------------------
+mri_concat /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50002_recon.1.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50003_MRI.2.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50004_MRI.3.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50005_MRI.4.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50006_MRI.5.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50007_MRI.6.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50008_MRI.7.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50009_MRI.8.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50010_MRI.9.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50011_MRI.10.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50012_MRI.11.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50013_MRI.12.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50014.13.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50015.14.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50016.15.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50017.16.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50019.17.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50020.18.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50022.19.mgh /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441/50023.20.mgh --o /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/stack.rh.thickness.mgh
+ninputs = 20
+Checking inputs
+nframestot = 20
+Allocing output
+Done allocing
+nframes = 20
+Writing to /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/stack.rh.thickness.mgh
+
+
+
+Cleaning up
+-----------------------
+rm -r /home/marco/Desktop/SUBJECTS_freeSurfer/FINAL_TEMPLATE/surf/tmp.mris_preproc.18441
+sab 25 feb 2017, 23.53.03, CET
+mris_preproc done
